@@ -1,0 +1,92 @@
+#include <iostream>
+#include <ctime>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "Rus");
+	srand(time(NULL));
+	float snow = 0;
+	float rain = 0;
+	const int n = 4;
+	float r[n];
+	float t[n];
+	for (int i = 0; i < n; i++)
+	{
+		r[i] = rand() % 10;
+		t[i] = rand() % 40 - 20;
+		if (t[i] >= 0)
+		{
+			rain = rain + r[i];
+		}
+		if (t[i] < 0)
+		{
+		snow = snow + r[i];
+		}
+	}
+	for (int i = 0; i < n; i++)
+	{
+		cout << "Temp " << t[i] << endl;
+		cout << "Precip " << r[i] << endl;
+		cout << "+" << endl;
+	}
+	
+	cout << "Precipitation per month ("<<n<<" days)"<<endl;
+	cout << "Snow: " << snow <<" mm." <<endl;
+	cout << "Rain: " << rain <<" mm." << endl;
+	system("pause");
+	return 0;
+}
+
+#include <iostream>
+#include <ctime>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "Rus");
+	srand(time(NULL));
+	float a, b;
+	cin >> a >> b;
+	cout << "До: " << a << "," << b << endl;
+	a = a + b;
+	b = a - b;
+	a = a - b;
+	cout << "После: " << a << "," << b << endl;
+	system("pause");
+	return 0;
+}
+
+#include <iostream>
+#include <ctime>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "Rus");
+	srand(time(NULL));
+	int step = 0;
+	int n = 0;
+	int a, b, c, d;
+	cin >> n;
+	a = n % 10;
+	n = n - a;
+	n = n / 10;
+	b = n % 10;
+	n = n - b;
+	n = n / 10;
+	c = n % 10;
+	n = n - c;
+	n = n / 10;
+	d = n % 10;
+	 
+	cout << d << " " << c <<" "<<b<<" "<<a<< endl;
+	system("pause");
+	return 0;
+}

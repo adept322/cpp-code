@@ -1,0 +1,244 @@
+#include <iostream>
+#include <ctime>
+
+using namespace std;
+
+
+void main()
+{
+	setlocale(LC_ALL, "Rus");
+	srand(time(NULL));
+	int a;
+	while (true)
+	{
+		cout << "Enter" << endl;
+		cin >> a;
+		while (true)
+		{
+			if (a % 2 == 0)
+			{
+             a = a / 2;
+			}
+			if (a % 2 == 1)
+			{
+				break;
+			}
+
+		}
+		if (a == 1)
+		{
+			break;
+		}
+	}
+
+
+
+
+	system("pause");
+}
+
+#include <iostream>
+#include <ctime>
+
+using namespace std;
+
+
+void main()
+{
+	setlocale(LC_ALL, "Rus");
+	srand(time(NULL));
+	char answer1;
+	char answer2;
+	char answer3;
+	int balls = 3;
+	cout << "В високосном году 365 дней?(y/n)" << endl;
+	cin>>answer1;
+	switch (answer1)
+	{
+	case'y':
+	{
+		balls = balls - 1;
+		cout << "Неверно" << endl;
+		break;
+	}
+	case'n':
+	{
+		cout << "Верно" << endl;
+		break;
+	}
+	default:
+	{
+		balls = balls - 1;
+		cout << "Неверно" << endl;
+		break;
+	}
+    }
+	cout << "В Adidas 3 полоски?(y/n)" << endl;
+	cin >> answer2;
+	switch (answer2)
+	{
+	case'y':
+	{
+		cout << "Верно" << endl;
+		break;
+	}
+	case'n':
+	{
+		balls = balls - 1;
+		cout << "Неверно" << endl;
+		break;
+	}
+	default:
+	{
+		balls = balls - 1;
+		cout << "Неверно" << endl;
+		break;
+	}
+	}
+	cout << "Правда, что в России 3 края?(y/n)" << endl;
+	cin >> answer3;
+	switch (answer3)
+	{
+	case'y':
+	{
+		balls = balls - 1;
+		cout << "Неверно" << endl;
+		break;
+	}
+	case'n':
+	{
+		
+		cout << "Верно" << endl;
+		break;
+	}
+	default:
+	{
+		balls = balls - 1;
+		cout << "Неверно" << endl;
+		break;
+	}
+	}
+	cout <<"Правильных ответов  : "<<balls << endl;
+	
+	
+    system("pause");
+}
+#include <iostream>
+#include <ctime>
+
+using namespace std;
+
+
+void main()
+{
+	setlocale(LC_ALL, "Rus");
+	srand(time(NULL));
+	int n = 0;
+	cout << "Введите число" << endl;
+	cin >> n;
+	bool simple = false;
+	for (int i = 2; i < n; i++)
+	{
+		if (n%i == 0)
+		{
+			simple = true;
+			break;
+		}
+    }
+	if (simple == true)
+	{
+		cout << "Непростое" << endl;
+	}
+	else
+	{
+		cout << "Простое" << endl;
+	}
+	system("pause");
+}	
+    
+#include <iostream>
+#include <ctime>
+
+using namespace std;
+
+
+void main()
+{
+	setlocale(LC_ALL, "Rus");
+	srand(time(NULL));
+	int n = 0;
+	cout << "Введите число" << endl;
+	cin >> n;
+	bool simple = false;
+	for (int i = 2; i < n; i++)
+	{
+		if (n%i == 0)
+		{
+			simple = true;
+			break;
+		}
+    }
+	if (simple == true)
+	{
+		cout << "Непростое" << endl;
+	}
+	else
+	{
+		cout << "Простое" << endl;
+	}
+	system("pause");
+}
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+
+
+	setlocale(LC_ALL, "Russian");
+	cout << "Enter" << endl;
+	int n, c = 1;
+	cin >> n;
+	cout << "1, ";
+	for (int i = 1; i < n; i++)
+	{
+		c = c + i;
+
+		cout << c << ", ";
+	}
+
+
+	system("pause");
+}
+#include <iostream>
+#include <ctime>
+#include <windows.h>
+#include <iomanip>
+
+
+using namespace std;
+
+int main()
+{
+
+
+	setlocale(LC_ALL, "Russian");
+	cout << "Enter" << endl;
+	int n, c = 1;
+	cin >> n;
+	cout << "1, ";
+	DWORD time1 = ::GetTickCount();
+	for (int i = 1; i < n; i++)
+	{
+		c = c + i;
+		cout << c << ", " <<  endl;
+	}	
+	DWORD time2 = ::GetTickCount() - time1;
+	cout << setiosflags(ios::scientific) <<"Msec : "<< time2 << endl;
+    system("pause");
+}
+
+
+//78  46	
+    

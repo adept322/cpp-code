@@ -1,0 +1,94 @@
+#include <iostream>
+
+using namespace std;
+
+
+void main ()
+{
+	setlocale(LC_ALL,"Rus");
+    
+	float a;
+	float b;
+	cout<<"¬ведите первое число"<<endl;
+	cin>>a;
+	cout<<"¬ведите второе число"<<endl;
+	cin>>b;
+
+   
+	cout<<a<<" + "<<b<<" = "<<a + b<<endl;
+	
+	cout<<a<<" - "<<b<<" = "<<a - b<<endl;
+	
+	cout<<a<<" * "<<b<<" = "<<a * b <<endl;
+	
+
+	cout<<a<<" / "<<b<<" = "<<a / b<<endl;
+	
+
+	
+
+    system("pause");
+
+}
+
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+
+#include <iostream>
+
+using namespace std;
+
+
+void main ()
+{
+	setlocale(LC_ALL,"Rus");
+    
+	int x;
+	int y;
+	int z;
+	cout<<"¬ведите первое число суммы"<<endl;
+	cin>>x;
+	cout<<"¬ведите второе число суммы"<<endl;
+	cin>>y;
+	cout<<"¬ведите третье число на которое умножаетс€ сумма"<<endl;
+	cin>>z;
+
+   
+	cout<<"("<<x<<" + "<<y<<")"<<" * "<<z<<" = "<<(x + y)*z<<endl;
+	
+
+	
+
+    system("pause");
+}
+fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+#include <iostream>
+
+using namespace std;
+
+
+void main ()
+{
+	setlocale(LC_ALL,"Rus");
+    
+	float a;
+	cout<<"¬ведите число"<<endl;
+	cin >>a;
+
+
+	
+	
+	if ( a > 100 )
+	{ cout<<"Ёто большое число."<<endl;
+	}
+
+	if ( a < 100 )
+	{ cout<<"Ёто маленькое число"<<endl;
+	}
+
+	if ( a == 100 )
+	{ cout<<"Ёто нормальное число"<<endl;
+	}
+
+
+
+

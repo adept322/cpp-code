@@ -1,0 +1,177 @@
+#include <iostream>
+#include <ctime>
+
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "Rus");
+	srand(time(NULL));
+	const int x = 10, y = 12;
+	int array[x][y];
+	for (int i = 0; i < x; i++)
+	{
+		for (int j = 0; j < y; j++)
+		{
+			array[i][j] = rand() %90 + 10;
+		}
+	}
+	for (int i = 0; i < x; i++)
+	{
+		for (int j = 0; j < y; j++)
+		{
+			cout << array[i][j] << " ";
+		}
+		cout << endl;
+	}
+	system("pause");
+	return 0;
+}
+
+#include <iostream>
+#include <ctime>
+
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "Rus");
+	srand(time(NULL));
+	const int x = 10, y = 12;
+	int sum = 0;
+	int mas[x];
+	int pos_max = 0;
+	int max;
+	int array[x][y];
+	cout << "Matrix:" << endl;
+	for (int i = 0; i < x; i++)
+	{
+		for (int j = 0; j < y; j++)
+		{
+			array[i][j] = rand() %90 + 10;
+			sum = sum + array[i][j];
+		}
+		mas[i] = sum;
+		sum = 0;
+	}
+	for (int i = 0; i < x; i++)
+	{
+		for (int j = 0; j < y; j++)
+		{
+			cout << array[i][j] << " ";
+		}
+		cout << endl;
+	}
+	max = mas[0];
+	for (int i = 1; i < x; i++)
+	{
+		if (max < mas[i])
+		{
+			max = mas[i];
+			pos_max = i;
+		}
+	}
+	cout << "Sum: " << endl;
+	for (int i = 0; i < x; i++)
+	{
+		cout << mas[i] << endl;
+	}
+	cout <<"Max: "<< pos_max + 1 << endl;
+	system("pause");
+	return 0;
+}
+
+#include <iostream>
+#include <ctime>
+
+using namespace std;
+
+int main()
+{	//3
+	//5
+	//2 2 3 4 5 5 5 2 2
+	setlocale(LC_ALL, "Rus");
+	srand(time(NULL));
+	const int x = 5, y = 5;
+	int sum = 0;
+	int mas[x];
+	int pos_max = 0;
+	int max = 0;
+	int array[x][y];
+	
+	int max_seria = 0;
+	int current = 0;
+	int number = 0;
+
+
+	cout << "Matrix:" << endl;
+	for (int i = 0; i < x; i++)
+	{
+		for (int j = 0; j < y; j++)
+		{
+			array[i][j] = rand() %2;
+			number = array[0][0];
+			current = number;
+			sum = sum + array[i][j];
+			if (current == number)
+			{
+				max_seria++;
+			}
+		}
+		mas[i] = sum;
+		sum = 0;
+	}
+	
+	for (int i = 0; i < x; i++)
+	{
+		for (int j = 0; j < y; j++)
+		{
+			cout << array[i][j] << "|";
+		}
+		cout << endl;
+	}
+	max = mas[0];
+	for (int i = 1; i < x; i++)
+	{
+		if (max < mas[i])
+		{
+			max = mas[i];
+			pos_max = i;
+		}
+	}
+	cout << "Sum: " << endl;
+	for (int i = 0; i < x; i++)
+	{
+		cout << mas[i] <<"-"<<i + 1<< endl;
+	}
+	
+	cout <<"Max: "<< pos_max + 1 << endl;
+	system("pause");
+	return 0;
+}
+
+#include <iostream>
+#include <ctime>
+
+using namespace std;
+
+int main()
+{
+	srand(time(NULL));
+	int n = 0;
+	cout << "Enter size" << endl;
+	cin >> n;
+	int* mas =new int[n];
+	for (int i = 0; i < n; i++)
+	{
+		mas[i] = rand() % 100 - 50;
+	}
+	cout << endl;
+	for (int i = 0; i < n; i++)
+	{
+		cout << mas[i] << endl;
+	}
+	delete[] mas;
+	system("pause");
+	return 0;
+}

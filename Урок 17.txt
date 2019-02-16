@@ -1,0 +1,174 @@
+#include <iostream>
+#include <string>
+#include <vector>
+
+
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	string str;
+	getline(cin, str);
+	int error = 0;
+	int st = 0,end = 0;
+	for (int i = 0; i < str.length(); i++)
+	{
+		if (str[i] == '(' || str[i] == '{' || str[i] == '[')
+		{
+			st++;
+		}
+		if (str[i] == ')' || str[i] == '}' || str[i] == ']')
+		{
+			end++;
+		}
+	}
+	
+	
+	
+	if (st == end)
+	{
+		cout << "Запустится." << endl;
+	}
+	else
+	{
+		cout << "Не запустится." << endl;
+	}
+
+
+	system("pause");
+	return 0;
+}
+
+#include <iostream>
+#include <string>
+#include <vector>
+
+
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	string str;
+	getline(cin, str);
+	int error = 0;
+	int st = 0,end = 0;
+	for (int i = 0; i < str.length(); i++)
+	{
+		if (str[i] == '(' )
+		{
+			st++;
+		}
+		if (str[i] == ')' )
+		{
+			end++;
+		}
+	}
+	if (st != end)
+	{
+		error = 1;
+	}
+	st = 0;
+	end = 0;
+	for (int i = 0; i < str.length(); i++)
+	{
+		if (str[i] == '[')
+		{
+			st++;
+		}
+		if (str[i] == ']')
+		{
+			end++;
+		}
+	}
+	if (st != end)
+	{
+		error = 1;
+	}
+	st = 0;
+	end = 0;
+	for (int i = 0; i < str.length(); i++)
+	{
+		if (str[i] == '{')
+		{
+			st++;
+		}
+		if (str[i] == '}')
+		{
+			end++;
+		}
+	}
+	if (st != end)
+	{
+		error = 1;
+	}
+	if (error == 0)
+	{
+		cout << "Запустится." << endl;
+	}
+	else
+	{
+		cout << "Не запустится." << endl;
+	}
+
+
+	system("pause");
+	return 0;
+}
+
+#include <iostream>
+#include <string>
+#include <vector>
+
+
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	string str;
+	string str1;
+	getline(cin, str);
+	str1 = str;
+	for (int i = 0, j = str.length() - 1;i < str.length();i++,j--)
+	{
+		str1[i] = str[j];
+	}
+	cout << "@-----@" << endl;
+	cout << str << endl;
+	cout << str1 << endl;
+	
+	system("pause");
+	return 0;
+}
+
+#include <iostream>
+#include <string>
+#include <vector>
+
+
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	string str;
+	getline(cin, str);
+	
+	int pos = 0;
+	for (int i = 0;i < str.length(); i++)
+	{
+		if (str[i] == '+')
+		{
+			if (str[i + 1] == '+')
+			{
+				str.insert(str.begin() + i,'C');
+				i++;
+			}
+		}
+	}
+	cout << str << endl;
+	system("pause");
+	return 0;
+}

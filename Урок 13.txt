@@ -1,0 +1,196 @@
+#include <iostream>
+#include <ctime>
+
+using namespace std;
+
+void print(int* m, int n)
+{
+	for (int i = 0;i < n;i++)
+	{
+		cout << m[i] << endl;
+	}
+	cout << endl;
+}
+
+void fill(int* mas, int n)
+{
+	for (int i = 0;i < n;i++)
+	{
+		 mas[i] = rand() % 100;
+	}
+}
+
+void sort(int* mass, int n)
+{
+	int temp = 0;
+	for (int i = 1; i < n; ++i)
+	{
+		for (int r = 0; r < n - i; r++)
+		{
+			if (mass[r] < mass[r + 1])
+			{	
+				swap(mass[r], mass[r + 1]);
+			}
+		}
+	}
+}
+
+void snos()
+{
+	cout << "@-_-_-_-_-_-_-_-_-@" << endl;
+	cout << endl;
+}
+
+int max_array(int* mas, int n)
+{
+	int max = mas[0];
+	for (int i = 1;i < n;i++)
+	{
+		if (max <= mas[i])
+		{
+			max = mas[i];
+		}
+	}
+	return max;
+}
+int main()
+{
+	srand(time(NULL));
+	int m;
+	cin >> m;
+	cout << endl;
+	int* mas = new int[m];
+	fill(mas,m);
+	print(mas, m);
+	cout <<"Max: "<< max_array(mas, m) << endl;
+	cout << endl;
+	snos();
+	sort(mas, m);
+	print(mas, m);
+	delete[] mas;
+	system("pause");
+	return 0;
+}
+
+
+#include <iostream>
+#include <ctime>
+
+using namespace std;
+
+void print(int* m, int n)
+{
+	for (int i = 0;i < n;i++)
+	{
+		cout << m[i] <<"-"<<i + 1<< endl;
+	}
+}
+
+void print_df()
+{
+	cout << "1.Fill ." << endl;
+	cout << "2.print." << endl;
+	cout << "3.Sort." << endl;
+	cout << "4.cout max." << endl;
+	cout << "0.Exit." << endl;
+}
+
+void fill(int* mas, int n)
+{
+	for (int i = 0;i < n;i++)
+	{
+		mas[i] = rand()%100;
+	}
+}
+
+void sort(int* mass, int n)
+{
+	int temp = 0;
+	for (int i = 1; i < n; ++i)
+	{
+		for (int r = 0; r < n - i; r++)
+		{
+			if (mass[r] < mass[r + 1])
+			{	
+				swap(mass[r], mass[r + 1]);
+			}
+		}
+	}
+}
+
+int max_array(int* mas, int n)
+{
+	int max = mas[0];
+	for (int i = 1;i < n;i++)
+	{
+		if (max <= mas[i])
+		{
+			max = mas[i];
+		}
+	}
+	return max;
+}
+
+int main()
+{
+	srand(time(NULL));
+	int m = 0;
+	int answ = 0;
+	int an = 1;
+	cout << "Enter size" << endl;
+	cin >> m;
+	cout << endl;
+	int* mas = new int[m];
+	while (true)
+	{
+		if (an == 1)
+		{
+			print_df();
+			cin >> answ;
+			switch (answ)
+			{
+			case 1:
+			{
+				cout << "@Filled array@" << endl;
+				fill(mas, m);
+				break;
+			}
+			case 2:
+			{
+				cout << "@Array: " << endl;
+				print(mas, m);
+				break;
+			}
+			case 3:
+			{
+				cout << "@Sorted array: " << endl;
+				sort(mas, m);
+				break;
+			}
+			case 4:
+			{
+				cout << "@Maximum: " << max_array(mas, m) << endl;
+				break;
+			}
+			case 0:
+			{
+				cout << "@Exit@" << endl;
+				return 0;
+			}
+			default:
+			{
+				break;
+			}
+			}
+			answ = 0;
+		}
+		if(an == 0)
+		{
+			break;
+		}
+	}
+	
+	delete[] mas;
+	system("pause");
+	return 0;
+}

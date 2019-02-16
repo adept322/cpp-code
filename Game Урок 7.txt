@@ -1,0 +1,129 @@
+#include <iostream>
+#include <ctime>
+
+using namespace std;
+void main()
+{
+	setlocale(LC_ALL, "Rus");
+
+	srand(time(NULL));
+	while (true)
+	{
+		int answer1 = 0;
+		int answer2 = 0;
+		int answer3 = 0;
+		int hp = 0;
+		cout << "Сколько дней в неделе?" << endl;
+		cout << "1) 1" << endl;
+		cout << "2) 5" << endl;
+		cout << "3) 7" << endl;
+		cin >> answer1;
+		switch (answer1)
+		{
+		case 1:
+		{
+			
+			break;
+		}
+		case 2:
+		{
+			
+			break;
+		}
+		case 3:
+		{
+			cout << "Верно" << endl;
+			hp = hp + 1;
+			break;
+		}
+		default:
+		{
+			hp = hp - 1;
+			break;
+		}
+		}
+
+		cout << "Сколько полосок в Адидасе?" << endl;
+		cout << "1) 1" << endl;
+		cout << "2) 3" << endl;
+		cout << "3) 2" << endl;
+		cin >> answer2;
+		switch (answer2)
+		{
+		case 1:
+		{
+			
+			break;
+		}
+		case 2:
+		{
+			cout << "Верно" << endl;
+			hp = hp + 1;
+			break;
+		}
+		case 3:
+		{
+			
+			break;
+		}
+		default:
+		{
+			
+			break;
+		}
+		}
+
+		cout << "Сколько дней в Октябре?" << endl;
+		cout << "1) 29" << endl;
+		cout << "2) 31" << endl;
+		cout << "3) 30" << endl;
+		cin >> answer3;
+		switch (answer3)
+		{
+		case 1:
+		{
+			
+			break;
+		}
+		case 2:
+		{
+			cout << "Верно" << endl;
+			hp = hp + 1;
+			break;
+		}
+		case 3:
+		{
+			
+			break;
+		}
+		default:
+		{
+			
+			break;
+		}
+		}
+		cout << "Жизней: " << hp << endl;
+		if (hp == 3)
+		{
+			cout << "Молодчик" << endl;
+			break;
+		}
+		if (hp == 2)
+		{
+			cout << "Нормас" << endl;
+			break;
+		}
+		if (hp == 1)
+		{
+			cout << "Слабовато" << endl;
+			break;
+		}
+		if (hp == 0)
+			break;
+		{
+			cout << "Не очень" << endl;
+		}
+
+	}
+	system("pause");
+}

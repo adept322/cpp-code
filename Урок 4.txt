@@ -1,0 +1,205 @@
+#include <iostream>
+using namespace std;
+
+void main()
+{
+    setlocale(LC_ALL,"Rus");
+    float a,b;
+
+	while(true)
+	{
+		cout<<"Введите 2 числа"<<endl;
+		cin>>a>>b;
+		cout<<"Их сумма = "<<a+b<<endl;
+		cout<<"~Работа завершена~"<<endl;
+	}
+
+
+	system ("pause");
+}
+
+#include <iostream>
+using namespace std;
+
+void main()
+{
+    setlocale(LC_ALL,"Rus");
+    float a = 0,b = 0;
+    
+	while(a>=0 || b>=0)
+	{
+		cout<<"Введите 2 числа"<<endl;
+		cin>>a>>b;
+		cout<<"Их сумма = "<<a+b<<endl;
+		cout<<"~Работа завершена~"<<endl;
+	}	
+	
+
+
+	system ("pause");
+}
+
+#include <iostream>
+using namespace std;
+
+void main()
+{
+    setlocale(LC_ALL,"Rus");
+    float a = 0,b = 0;
+	
+    while(a >= 0 && b >= 0)
+	{
+		cout<<"Введите 2 числа"<<endl;
+		cin>>a>>b;
+		cout<<"Их сумма = "<<a+b<<endl;
+		cout<<"~Работа завершена~"<<endl;
+	}	
+	
+
+
+	system ("pause");
+}
+
+
+#include <iostream>
+using namespace std;
+
+void main()
+{
+    setlocale(LC_ALL,"Rus");
+    float a,sum=0;
+	
+    while(true)
+	{
+	cout<<"Сколько грибов вы нашли"<<endl;
+	cin>>a;
+	sum = sum + a;
+	cout<<"Кол-во грибов  "<<sum<<endl;;
+
+	}	
+	
+
+
+	system ("pause");
+}
+
+#include <iostream>
+using namespace std;
+
+void main()
+{
+    setlocale(LC_ALL,"Rus");
+    float a,sum=0;
+	
+    while(sum < 100)
+	{
+	cout<<"Сколько грибов вы нашли"<<endl;
+	cin>>a;
+	sum = sum + a;
+	cout<<"Кол-во грибов  "<<sum<<endl;;
+
+
+	}	
+	
+
+
+	system ("pause");
+}
+
+#include <iostream>
+using namespace std;
+
+void main()
+{
+    setlocale(LC_ALL,"Rus");
+    float a,sum=0;
+	
+    while(sum < 100)
+	{
+	cout<<"Сколько грибов вы нашли"<<endl;
+	cin>>a;
+	if (a > 0)
+	{
+	sum = sum + a;
+	cout<<"Кол-во грибов  "<<sum<<endl;;
+	}
+	else 
+	{
+	cout<<"Ошибка"<<endl;
+	}
+	}
+		
+	system ("pause");
+}
+
+
+#include <iostream>
+using namespace std;
+
+void main()
+{
+	setlocale(LC_ALL,"Rus");
+	float dead,total;
+
+	cout<<"Сколько всего гладиаторов"<<endl;
+	cin>>total;
+
+	while(total >= 1 )
+	{
+		cout<<"Сколько гладиаторов убито?"<<endl;
+		cin>>dead;
+		if (dead > 0)
+		    {
+			total = total - dead;
+			cout<<"Количество"<<total<<endl;
+		    }
+			else 
+			{
+				cout<<"Error"<<endl;
+			}
+		if (total < 0)
+		{
+		 total = 0;
+		}
+
+		}
+
+		system ("pause");
+	}
+
+#include <iostream>
+using namespace std;
+
+void main()
+{
+	setlocale(LC_ALL,"Rus");
+	float p=1,n=0;
+	int count=0;
+	cout<<"Введите количество перемножаемых чисел"<<endl;
+	cin>>n;
+
+
+
+	while(count < n)
+	{
+	count = count + 1;
+	p=p*count;
+	
+	}	
+     
+	cout<<"Факториал = "<<p<<endl;
+	system ("pause");
+}														
+
+
+
+
+
+
+
+	
+
+
+
+
+

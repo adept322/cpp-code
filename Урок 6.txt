@@ -1,0 +1,118 @@
+#include <iostream>
+#include <ctime>
+using namespace std;
+
+void main()
+{
+	setlocale(LC_ALL,"Rus");
+	srand(time(NULL));
+	float n;
+	for(int i = 0;i < 10;i = i + 1)
+	{
+		n = rand();
+		cout<<n<<" , ";
+	}	   
+	system ("pause");
+}
+
+#include <iostream>
+#include <ctime>
+using namespace std;
+
+void main()
+{
+	setlocale(LC_ALL,"Rus");
+	srand(time(NULL));
+	float n;
+	for(int i = 0;i < 10;i++)
+	{
+		n = rand();
+		cout<<n<<endl;
+	}	   
+	system ("pause");
+}
+
+#include <iostream>
+#include <ctime>
+using namespace std;
+
+void main()
+{
+	setlocale(LC_ALL,"Rus");
+	srand(time(NULL));
+	float n;
+	for(int i = 0;i < 10;i++)
+	{
+		n = rand() % 10;
+		cout<<n<<endl;
+	}	   
+	system ("pause");
+}
+
+#include <iostream>
+#include <ctime>
+using namespace std;
+
+void main()
+{
+	setlocale(LC_ALL,"Rus");
+	srand(time(NULL));
+	float n;
+	for(int i = 0;i < 10;i++)
+	{
+		n = rand()%100-30;
+		cout<<n<<endl;
+	}	   
+	system ("pause");
+}
+
+#include <iostream>
+#include <ctime>
+using namespace std;
+
+void main()
+{
+	setlocale(LC_ALL,"Rus");
+	srand(time(NULL));
+	float n,m;
+	for(int i = 0;i < 5;i++)
+	{
+		n = rand()%10 - 60;
+		m = rand()%20 + 40;
+		cout<<n<<endl;
+		cout<<m<<endl;
+
+	}	   
+	system ("pause");
+}
+
+#include <iostream>
+#include <ctime>
+using namespace std;
+
+void main()
+{
+	setlocale(LC_ALL,"Rus");
+	srand(time(NULL));
+	float s,m;
+	for(int i = 0;i < 10;i++)
+	{
+		s = rand()%2;
+		if(s == 0)
+		{
+		m = rand() %20 + 40;
+		}
+		if(s ==1)
+		{
+		m = -1*(rand() %20 + 40);
+		}
+
+	}	   
+	system ("pause");
+}
+
+
+
+
+
+

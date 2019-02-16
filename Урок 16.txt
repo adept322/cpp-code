@@ -1,0 +1,201 @@
+#include <iostream>
+#include <vector>
+#include <Windows.h>
+#include <ctime>
+
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	srand(time(NULL));
+	vector<int> arr;
+	int var = 0;
+	while (true)
+	{
+		system("pause");
+		system("cls");
+		
+		cout << "Enter new element." << endl;
+		cin >> var;
+		arr.push_back(var);
+		cout << "Array: ";
+		for (int i = 0; i < arr.size(); i++)
+		{
+			cout << arr[i]<<"; ";
+		}
+		cout << endl;
+		for (int i = 1; i < arr.size(); ++i)
+		{
+			for (int r = 0; r < arr.size() - i; r++)
+			{
+				if (arr[r] < arr[r + 1])
+				{
+					swap(arr[r], arr[r + 1]);
+				}
+			}
+		}
+		cout << "Sorted array: ";
+		for (int i = 0; i < arr.size(); i++)
+		{
+			cout << arr[i] << "; ";
+		}
+		cout << endl;
+	}
+	
+
+
+	system("pause");
+	return 0;
+}
+
+#include <iostream>
+#include <vector>
+#include <Windows.h>
+#include <ctime>
+
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	srand(time(NULL));
+	vector<int> first;
+	vector<int> second;
+	float mark_f = 0, mark_s = 0, buf_sum = 0;;
+	int var = 0;
+	while (true)
+	{
+		system("pause");
+		system("cls");
+		cout << "Enter mark." << endl;
+		cin >> var;
+		if (var == 0)
+		{
+			cout << "Exit." << endl;
+			system("pause");
+			return 0;
+		}
+		if (var <= 1 || var > 5)
+		{
+			cout << "Error." << endl;
+			continue;
+		}
+		if (var <= 3)
+		{
+			second.push_back(var);
+		}
+		if (var >= 4)
+		{
+			first.push_back(var);
+		}
+		if (first.size() != 0)
+		{
+			for (int i = 0; i < first.size(); i++)
+			{
+				buf_sum = buf_sum + first[i];
+			}
+			mark_f = buf_sum / first.size();
+			buf_sum = 0;
+			cout << "Mark good girl: " << mark_f << endl;
+
+		}
+		if (second.size() != 0)
+		{
+			for (int i = 0; i < second.size(); i++)
+			{
+				buf_sum = buf_sum + second[i];
+			}
+			mark_s = buf_sum / second.size();
+			buf_sum = 0;
+			cout << "Mark bad girl: " << mark_s << endl;
+		}
+		cout << "Good girl marks: ";
+		for (int i = 0; i < first.size(); i++)
+		{
+			cout << first[i] << " , ";
+		}
+		cout << endl;
+		cout << "Bad girl marks: ";
+		for (int i = 0; i < second.size(); i++)
+		{
+			cout << second[i] << " , ";
+		}
+		cout << endl;
+		
+		
+	}
+	
+
+
+
+
+
+
+
+	system("pause");
+	return 0;
+}
+
+#include <iostream>
+#include <vector>
+#include <Windows.h>
+#include <ctime>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	srand(time(NULL));
+	string  str;
+	char s;
+	int count = 0;
+	cout << "Введите строку." << endl;
+	cin >> str;
+	cout << "Введите символ." << endl;
+	cin >> s;
+	for (int i = 0; i < str.length(); i++)
+	{
+		if (str[i] == s)
+		{
+			count++;
+		}
+	}
+	cout <<"Символов "<< count << endl;
+
+
+
+
+
+	system("pause");
+	return 0;
+}
+
+#include <iostream>
+#include <vector>
+#include <Windows.h>
+#include <ctime>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	srand(time(NULL));
+	string  str;
+	while (true)
+	{
+		system("pause");
+		system("cls");
+		cin >> str;
+		for (int i = 0; i < str.length(); i++)
+		{
+			cout << (int)str[i] << " ";
+		}
+	}
+	system("pause");
+	return 0;
+}

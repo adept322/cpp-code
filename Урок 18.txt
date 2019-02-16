@@ -1,0 +1,428 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+	string name;
+	cout << "Enter login: " << endl;
+	getline(cin, name);
+	name[0] = toupper(name[0]);
+	for (int i = 0; i < name.length(); i++)
+	{
+		while (name[i] == ' ')
+		{
+			name.erase(name.begin() + i);
+			if (name[i] != ' ')
+			{
+				name[i] = toupper(name[i]);
+			}
+		}
+	}
+	cout << name << endl;
+	system("pause");
+	return 0;
+}
+#include <iostream>
+#include <string>
+#include <ctime>
+
+using namespace std;
+
+int main()
+{
+	srand(time(NULL));
+	string name;
+	cout << "Enter login: " << endl;
+	getline(cin, name);
+	name[0] = toupper(name[0]);
+	int buf = rand() % 100;
+	for (int i = 0; i < name.length(); i++)
+	{
+		while (name[i] == ' ')
+		{
+			name.erase(name.begin() + i);
+			if (name[i] != ' ')
+			{
+				name[i] = toupper(name[i]);
+			}
+		}
+	}
+	cout << name <<"_"<<buf<< endl;
+	system("pause");
+	return 0;
+}
+#include <iostream>
+#include <string>
+#include <ctime>
+#include <fstream>
+using namespace std;
+
+int main()
+{
+	ofstream fout;
+	ifstream fin;
+	fout.open("C:\\Users\\pupil\\Desktop\\text.txt");
+	fout << "HelloWorld" << endl;
+
+
+	fout.close();
+	system("pause");
+	return 0;
+}
+#include <iostream>
+#include <string>
+#include <ctime>
+#include <fstream>
+using namespace std;
+
+int main()
+{
+	ofstream fout;
+	ifstream fin;
+	string str;
+	cout << "Enter string: " << endl;
+	getline(cin,str);
+	fout.open("C:\\Users\\pupil\\Desktop\\text.txt");
+	fout << str << endl;
+
+
+	fout.close();
+	system("pause");
+	return 0;
+}
+#include <iostream>
+#include <string>
+#include <ctime>
+#include <fstream>
+using namespace std;
+
+int main()
+{
+	ofstream fout;
+	ifstream fin;
+	string str;
+	int size;
+	fin.open("C:\\Users\\pupil\\Desktop\\text.txt");
+	fin >> size;
+	int* mas = new int[size];
+	for (int i = 0; i < size; i++)
+	{
+		fin >> mas[i];
+	}
+	for (int i = 0; i < size; i++)
+	{
+		cout << mas[i] << endl;
+	}
+	fout.close();
+	system("pause");
+	return 0;
+}
+#include <iostream>
+#include <string>
+#include <ctime>
+#include <fstream>
+using namespace std;
+
+int main()
+{
+	ofstream fout;
+	ifstream fin;
+	string login, password;
+	string login1, password1;
+	int answer = 0;
+
+
+	cout << "1.Register." << endl;
+	cout << "2.Login." << endl;
+	cin >> answer;
+	switch (answer)
+	{
+	case 1:
+	{
+		cout << "New Login: " << endl;
+		cin >> login;
+		cout << "New Pasword: " << endl;
+		cin >> password;
+		fin.open("C:\\Users\\pupil\\Desktop\\text.txt");
+		fout << login << endl;
+		fout<< password << endl;
+		fout.close();
+		break;
+	}
+	case 2:
+	{
+		cout << "Enter Login: " << endl;
+		cin >> login;
+		cout << "Enter Pasword: " << endl;
+		cin >> password;
+		fin.open("C:\\Users\\pupil\\Desktop\\text.txt");
+		fin >> login1;
+		fin >> password1;
+		if (login1 == login && password == password1)
+		{
+			cout << "Successfully" << endl;
+		}
+		else
+		{
+			cout << "Error" << endl;
+		}
+		fin.close();
+		break;
+	}
+	case 0:
+	{
+		return 0;
+	}
+	default:
+	{
+		cout << "Error" << endl;
+		break;
+	}
+	}
+
+	system("pause");
+	return 0;
+}
+#include <iostream>
+#include <string>
+#include <ctime>
+#include <fstream>
+using namespace std;
+
+int main()
+{
+	
+	ifstream fin;
+	string login, password;
+	string login1, password1;
+	int answer = 0;
+
+
+	cout << "1.Register." << endl;
+	cout << "2.Login." << endl;
+	cin >> answer;
+	switch (answer)
+	{
+	case 1:
+	{
+		ofstream fout;
+		cout << "New Login: " << endl;
+		cin >> login;
+		cout << "New Pasword: " << endl;
+		while (true)
+		{
+			cin >> password;
+			if (password.length() < 8 && password.length() > 0)
+			{
+				break;
+			}
+		}
+		fout.open("C:\\Users\\pupil\\Desktop\\pp\\text.txt");
+		fout << login << endl;
+		fout << password << endl;
+		fout.close();
+		break;
+	}
+	case 2:
+	{
+		cout << "Enter Login: " << endl;
+		cin >> login;
+		cout << "Enter Pasword: " << endl;
+		cin >> password;
+		fin.open("C:\\Users\\pupil\\Desktop\\text.txt");
+		fin >> login1;
+		fin >> password1;
+		if (login == login1 && password == password1)
+		{
+			cout << "Successfully" << endl;
+		}
+		else
+		{
+			cout << "Error" << endl;
+		}
+		fin.close();
+		break;
+	}
+	case 0:
+	{
+		return 0;
+	}
+	default:
+	{
+		cout << "Error" << endl;
+		break;
+	}
+	}
+
+	system("pause");
+	return 0;
+}
+#include <iostream>
+#include <string>
+#include <ctime>
+#include <fstream>
+#include <vector>
+
+using namespace std;
+
+int main()
+{
+	ofstream fout;
+	ifstream fin;
+	string str;
+	vector<string> names;
+	vector<int> ages;
+	int age = 0;
+	fin.open("C:\\Users\\pupil\\Desktop\\pp\\input.txt");
+	for (int i = 0; fin; i++)
+	{
+		fin >> str;
+		names.push_back(str);
+		
+		fin >> age;
+		ages.push_back(age);
+	}
+	names.pop_back();
+	ages.pop_back();
+	fin.close();
+	for (int i = 0; i < ages.size(); i++)
+	{
+		cout << names[i] << " - " << ages[i] << endl;
+	}
+
+	system("pause");
+	return 0;
+}
+#include <iostream>
+#include <string>
+#include <ctime>
+#include <fstream>
+#include <vector>
+
+
+using namespace std;
+
+int main()
+{
+	ofstream fout;
+	ifstream fin;
+	string str;
+	vector<string> names;
+	vector<int> ages;
+	int age = 0, max = 0;
+	fin.open("C:\\Users\\pupil\\Desktop\\pp\\input.txt");
+	for (int i = 0; fin; i++)
+	{
+		fin >> str;
+		names.push_back(str);
+		
+		fin >> age;
+		ages.push_back(age);
+	}
+	names.pop_back();
+	ages.pop_back();
+	fin.close();
+	for (int i = 0; i < ages.size(); i++)
+	{
+		cout << names[i] << " - " << ages[i] << endl;
+	}
+	for (int i = 1; i < ages.size(); ++i)
+	{
+		for (int r = 0; r < ages.size() - i; r++)
+		{
+			if (ages[r] < ages[r + 1])
+			{
+				swap(ages[r], ages[r + 1]);
+				swap(names[r], names[r + 1]);
+			}
+		}
+	}
+	cout << endl;
+	for (int i = 0; i < ages.size(); i++)
+	{
+		cout << names[i] << " - " << ages[i] << endl;
+	}
+	
+	system("pause");
+	return 0;
+}
+#include <iostream>
+#include <string>
+#include <ctime>
+#include <fstream>
+#include <vector>
+#include <iomanip>
+
+using namespace std;
+
+int main()
+{
+	ofstream fout;
+	ifstream fin;
+	string str;
+	vector<string> names;
+	vector<int> ages;
+	int age = 0, max = 0;
+	fin.open("C:\\Users\\pupil\\Desktop\\pp\\input.txt");
+	for (int i = 0; fin; i++)
+	{
+		fin >> str;
+		names.push_back(str);
+		
+		fin >> age;
+		ages.push_back(age);
+	}
+	names.pop_back();
+	ages.pop_back();
+	fin.close();
+	for (int i = 0; i < ages.size(); i++)
+	{
+		cout <<left<<setw(20)<<names[i] <<  left << setw(20) <<ages[i] << endl;
+	}
+	for (int i = 1; i < ages.size(); ++i)
+	{
+		for (int r = 0; r < ages.size() - i; r++)
+		{
+			if (ages[r] < ages[r + 1])
+			{
+				swap(ages[r], ages[r + 1]);
+				swap(names[r], names[r + 1]);
+			}
+		}
+	}
+	cout << endl;
+	for (int i = 0; i < ages.size(); i++)
+	{
+		cout << left << setw(20) << names[i] <<  left << setw(20) << ages[i] << endl;
+	}
+	fout.open("C:\\Users\\pupil\\Desktop\\pp\\input.txt");
+	for (int i = 0; i < ages.size(); i++)
+	{
+		fout << left << setw(20) << names[i] << left << setw(20) << ages[i] << endl;
+	}
+	fout.close();
+	system("pause");
+	return 0;
+}
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+	setlocale(LC_ALL, "Rus");
+	string str, bad_word;
+	cout << "Enter sentence:" << endl;
+	getline(cin, str);
+	cout << "Enter censure: " << endl;
+	cin >> bad_word;
+	while (str.find(bad_word) != -1)
+	{
+		for (int k = 0; k < bad_word.length(); k++)
+		{
+			str[k + str.find(bad_word)] = '*';
+		}
+	}
+	cout << "Result: " << str << endl;
+	system("pause");
+	return 0;
+}

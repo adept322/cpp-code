@@ -1,0 +1,336 @@
+#include <iostream>
+
+using namespace std;
+
+
+void main()
+{
+	setlocale(LC_ALL,"Rus");
+
+	 cout<<"    |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|"<<endl;
+	 cout<<"    |  |       |     |   /    |~~~~~~~|   |  "<<endl;
+	 cout<<"    |  |       |     |  /     |       |   |  "<<endl;
+	 cout<<"    |  |       |     | /      |       |   |  "<<endl;
+     cout<<"    |  |       |     |/       |       |   |  "<<endl;
+	 cout<<"    |  |       |     | \\      |       |   |  "<<endl;
+	 cout<<"    |  |       |     |  \\     |       |   |  "<<endl;
+	 cout<<"    |  |~~~~~~~|_    |   \\    |       |   |  "<<endl;
+	 cout<<"    |            |            |~~~~~~~|   |  "<<endl;
+     cout<<"    |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|  "<<endl;
+
+
+
+	system ("pause");
+}
+
+#include <iostream>
+
+using namespace std;
+
+
+void main()
+{
+	setlocale(LC_ALL,"Rus");
+
+	float month;
+
+	cout<<"Введите месяц"<<endl;
+	
+	cin>>month;
+
+	if (month <= 12)
+	{
+		if (month == 1)
+		{
+			cout<<"Январь"<<endl;
+		}
+		if (month == 2)
+		{
+			cout<<"Февраль"<<endl;
+		}
+		if (month == 3)
+		{
+			cout<<"Март"<<endl;
+		}
+		if (month == 4)
+		{
+			cout<<"Апрель"<<endl;
+		} 
+		if (month == 5)
+		{
+			cout<<"Май"<<endl;
+		}
+		if (month == 6)
+		{
+			cout<<"Июнь"<<endl;
+		}
+		if (month == 7)
+		{
+			cout<<"Июль"<<endl;
+		}
+		if (month == 8)
+		{
+			cout<<"Август"<<endl;
+		}
+		if (month == 9)
+		{
+			cout<<"Сентябрь"<<endl;
+		}
+		if (month == 10)
+		{
+			cout<<"Октябрь"<<endl;
+		}
+		if (month == 11)
+		{
+			cout<<"Ноябрь"<<endl;
+		}
+		if (month == 12)
+		{
+			cout<<"Декабрь"<<endl;
+		}
+		if (month < 0)
+		{   
+			cout<<"%Ошибка%"<<endl;
+		}
+	}
+	else
+	{cout<<"%Ошибка%"<<endl;}
+
+
+	system ("pause");
+}
+
+
+
+
+
+#include <iostream>
+
+using namespace std;
+
+
+void main()
+{
+	setlocale(LC_ALL,"Rus");
+    float month;
+
+	cout<<"Введите месяц"<<endl;
+	cin>>month;
+
+	if (month >= 3)
+	 { 
+	if (month <= 5)
+	 { 
+	cout<<"Весна"<<endl;
+	 }
+	 }
+
+	if (month >= 6)
+	 { 
+	if (month <= 8)
+	 { 
+	cout<<"Лето"<<endl;
+	 }
+	 }
+
+	if (month >= 9)
+	 { 
+	if (month <= 11)
+	 { 
+	cout<<"Осень"<<endl;
+	 }
+	 }
+
+	if (month >= 1)
+	 { 
+	if (month <= 2)
+	 { 
+	cout<<"Зима"<<endl;
+	 }
+	 } 
+
+	if (month == 12)
+     { 
+	cout<<"Зима"<<endl;
+	 }
+
+
+
+
+#include <iostream>
+
+using namespace std;
+
+
+void main()
+{
+	setlocale(LC_ALL,"Rus");
+	float month;
+
+	cout<<"Введите месяц"<<endl;
+	cin>>month;
+
+
+	if (month > 0)
+	{
+		if (month <= 12)
+		{
+
+
+
+			if (month >= 3)
+			{ 
+				if (month <= 5)
+				{ 
+					cout<<"Весна"<<endl;
+				}
+			}
+
+			if (month >= 6)
+			{ 
+				if (month <= 8)
+				{ 
+					cout<<"Лето"<<endl;
+				}
+			}
+
+			if (month >= 9)
+			{ 
+				if (month <= 11)
+				{ 
+					cout<<"Осень"<<endl;
+				}
+			}
+
+			if (month >= 1)
+			{ 
+				if (month <= 2)
+				{ 
+					cout<<"Зима"<<endl;
+				}
+			} 
+
+			if (month == 12)
+			{ 
+				cout<<"Зима"<<endl;
+			}
+			if (month > 12)
+			{ 
+				cout<<"Ошибка"<<endl;
+			}
+		}
+	}
+
+	else
+	{
+		cout<<"Ошибка"<<endl;
+	}
+
+
+	if (month > 12)
+	{ 
+		cout<<"Ошибка"<<endl;
+	}
+
+	system ("pause");
+}
+
+
+
+#include <iostream>
+
+using namespace std;
+
+
+void main()
+{
+	setlocale(LC_ALL,"Rus");
+	float month;
+
+	cout<<"Введите месяц"<<endl;
+	cin>>month;
+
+
+	if (month > 0)
+	{
+		if (month <= 12)
+		{
+            if (month >= 3 && month <=5)
+			{ 
+				cout<<"Весна"<<endl;
+			}
+
+			if (month >= 6 && month <= 8)
+			{ 
+				cout<<"Лето"<<endl;
+			}
+
+			if (month >= 9 && month <= 11)
+			{ 
+			    cout<<"Осень"<<endl;
+			}	
+			
+            if (month >= 1 || month <= 2 || month == 12)
+			{ 
+				cout<<"Зима"<<endl;
+			}	
+
+
+			
+					
+				
+	if (month > 12)
+	{ 
+		cout<<"Ошибка"<<endl;
+	}
+
+	system ("pause");
+}
+
+
+
+#include <iostream>
+
+using namespace std;
+
+
+void main()
+{
+	setlocale(LC_ALL,"Rus");
+	float month;
+
+	cout<<"Введите месяц"<<endl;
+	cin>>month;
+
+
+	if (month > 0)
+	{
+	if (month <= 12)
+	{
+    if (month >= 3 && month <=5)
+    { 
+	cout<<"Весна"<<endl;
+	}
+
+	if (month >= 6 && month <= 8)
+	{ 
+	cout<<"Лето"<<endl;
+	}
+
+    if (month >= 9 && month <= 11)
+	{ 
+    cout<<"Осень"<<endl;
+	}	
+			
+    if (month >= 1 || month <= 2 || month == 12)
+	{ 
+	cout<<"Зима"<<endl;
+	}	       
+
+	if (month > 12)
+	{ 
+		cout<<"Ошибка"<<endl;
+	}
+
+	system ("pause");
+}

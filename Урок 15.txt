@@ -1,0 +1,745 @@
+#include <iostream>
+#include <ctime>
+
+using namespace std;
+
+void print(int* m, int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		cout << m[i] << endl;
+	}
+}
+
+void print_df()
+{
+	cout << "1.Fill ." << endl;
+	cout << "2.print." << endl;
+	cout << "3.Sort." << endl;
+	cout << "4.Cout max." << endl;
+	cout << "5.New element." << endl;
+	cout << "6.Delete element." << endl;
+	cout << "7.Cout min." << endl;
+	cout << "0.Exit." << endl;
+}
+
+void fill(int* mas, int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		mas[i] = rand() % 100 - 50;
+	}
+}
+
+void sort(int* mass, int n)
+{
+	int temp = 0;
+	for (int i = 1; i < n; ++i)
+	{
+		for (int r = 0; r < n - i; r++)
+		{
+			if (mass[r] < mass[r + 1])
+			{
+				swap(mass[r], mass[r + 1]);
+			}
+		}
+	}
+}
+
+int max_array(int* mas, int n)
+{
+	int max = mas[0];
+	for (int i = 1; i < n; i++)
+	{
+		if (max <= mas[i])
+		{
+			max = mas[i];
+		}
+	}
+	return max;
+}
+
+int min_array(int* mas, int n)
+{
+	int min = mas[0];
+	for (int i = 1; i < n; i++)
+	{
+		if (min >= mas[i])
+		{
+			min = mas[i];
+		}
+	}
+	return min;
+}
+
+int main()
+{
+	srand(time(NULL));
+	int m = 0;
+	int answ = 0;
+	int an = 1;
+	cout << "Enter size" << endl;
+	cin >> m;
+	cout << endl;
+	int* mas = new int[m];
+	while (true)
+	{
+		if (an == 1)
+		{
+			print_df();
+			cin >> answ;
+			switch (answ)
+			{
+			case 1:
+			{
+				cout << "@Filled array@" << endl;
+				fill(mas, m);
+				break;
+			}
+			case 2:
+			{
+				cout << "@Array: " << endl;
+				print(mas, m);
+				break;
+			}
+			case 3:
+			{
+				cout << "@Sorted array: " << endl;
+				sort(mas, m);
+				break;
+			}
+			case 4:
+			{
+				cout << "@Maximum: " << max_array(mas, m) << endl;
+				break;
+			}
+			case 5:
+			{
+				int* array = new int[m + 1];
+				for (int i = 0; i < m; i++)
+				{
+					array[i] = mas[i];
+				}
+				cout << "Enter new element" << endl;
+				cin >> array[m];
+				delete[] mas;
+				mas = array;
+				m++;
+				break;
+			}
+			case 6:
+			{
+				int* array = new int[m - 1];
+				for (int i = 0; i < m - 1; i++)
+				{
+					array[i] = mas[i];
+				}
+				delete[] mas;
+				mas = array;
+				m--;
+				break;
+			}
+			case 7:
+			{
+				cout << "@Minimum: " << min_array(mas, m) << endl;
+				break;				
+			}
+			case 0:
+			{
+				cout << "@Exit@" << endl;
+				return 0;
+			}
+			default:
+			{
+				break;
+			}
+			}
+			answ = 0;
+		}
+		if (an == 0)
+		{
+			break;
+		}
+	}
+
+	delete[] mas;
+	system("pause");
+	return 0;
+}
+
+#include <iostream>
+#include <ctime>
+
+using namespace std;
+
+int main()
+{
+	srand(time(NULL));
+	int size = 0;
+	int k = 0;
+	cout << "Enter size." << endl;
+	cin >> size;
+	int* array = new int[size];
+	for (int i = 0; i < size; i++)
+	{
+		array[i] = rand() % 100 - 50;
+	}
+	for (int i = 0; i < size; i++)
+	{
+		cout << array[i] << " ";
+	}
+	cout << endl;
+	while (true)
+	{
+		cout << "Enter k." << endl;
+		cin >> k;
+		if (k > size)
+		{
+			cout << "Error" << endl;
+			continue;
+		}
+		if (k < 0)
+		{
+			cout << "Error" << endl;
+			continue;
+		}
+		int* mas = new int[size - 1];
+		for (int i = 0; i < k; i++)
+		{
+			mas[i] = array[i];
+		}
+		for (int i = k + 1; i < size; i++)
+		{
+			mas[i-1] = array[i];
+		}
+		delete[] array;
+		array = mas;
+		size--;
+		for (int i = 0; i < size; i++)
+		{
+			cout << array[i] << " ";
+		}
+	}
+	
+	system("pause");
+	return 0;
+}
+
+#include <iostream>
+#include <ctime>
+#include <vector>
+
+using namespace std;
+
+void print()
+{
+	cout << "1.Добавить элемент в массив." << endl;
+	cout << "2.Добавить элемент в массив по индексу." << endl;
+	cout << "3.Удалить все элементы." << endl;
+	cout << "4.Удалить элемент по индексу." << endl;
+	cout << "5.Удалить последний элемент." << endl;
+	cout << "6.Вывести массив." << endl;
+	cout << "7.Найти максимум." << endl;
+	cout << "8.Найти минимум." << endl;
+	cout << "9.Отсортировать массив по убыванию." << endl;
+	cout << "0.Выход." << endl;
+}
+
+int main()
+{
+	
+	srand(time(NULL));
+	setlocale(LC_ALL, "Russian");
+	vector<int> arr;
+	int answer = 0;
+	while (true)
+	{
+		print();
+		cin >> answer;
+		switch (answer)
+		{
+		case 1:
+		{
+			int number = 0;
+			cout << "Введите элемент." << endl;
+			cin >> number;
+			arr.push_back(number);
+			break;
+		}
+		case 2:
+		{
+			int number = 0;
+			int pos = 0;
+			cout << "Введите индекс." << endl;
+			cin >> pos;
+			cout << "Введите элемент." << endl;
+			cin >> number;
+			arr.insert(arr.begin() + pos, number);
+			break;
+		}
+		case 3:
+		{
+			arr.clear();
+			break;
+		}
+		case 4:
+		{
+			int index = 0;
+			cout << "Введите индекс" << endl;
+			cin >> index;
+			arr.erase(arr.begin() + index);
+			break;
+		}
+		case 5:
+		{
+			arr.pop_back();
+			break;
+		}
+		case 6:
+		{
+			for (int i = 0; i < arr.size(); i++)
+			{
+				cout << arr[i] <<" ";
+			}
+			cout << endl;
+			break;
+		}
+		case 7:
+		{
+			int max = arr[0];
+			for (int i = 1; i < arr.size(); i++)
+			{
+				if (max < arr[i])
+				{
+					max = arr[i];
+				}
+			}
+			cout << "Максимум: " <<" "<<max<< endl;
+			break;
+		}
+		case 8:
+		{
+			int min = arr[0];
+			for (int i = 1; i < arr.size(); i++)
+			{
+				if (min > arr[i])
+				{
+					min = arr[i];
+				}
+			}
+			cout << "Минимум: " << " " << min << endl;
+			break;
+		}
+		case 9:
+		{
+			for (int i = 1; i < arr.size(); ++i)
+			{
+				for (int r = 0; r < arr.size() - i; r++)
+				{
+					if (arr[r] < arr[r + 1])
+					{
+						swap(arr[r], arr[r + 1]);
+					}
+				}
+			}
+			break;
+		}
+		case 0:
+		{
+			cout << "Exit" << endl;
+			return 0;
+		}
+		default:
+		{
+			break;
+		}
+		}
+	}
+
+
+
+	system("pause");
+	return 0;
+}
+
+#include <iostream>
+#include <ctime>
+#include <vector>
+
+using namespace std;
+
+void print()
+{
+	cout << "1.Добавить элемент в массив." << endl;
+	cout << "2.Добавить элемент в массив по индексу." << endl;
+	cout << "3.Удалить все элементы." << endl;
+	cout << "4.Удалить элемент по индексу." << endl;
+	cout << "5.Удалить последний элемент." << endl;
+	cout << "6.Вывести массив." << endl;
+	cout << "7.Найти максимум." << endl;
+	cout << "8.Найти минимум." << endl;
+	cout << "9.Отсортировать массив по убыванию." << endl;
+	cout << "0.Выход." << endl;
+}
+
+int main()
+{
+	
+	srand(time(NULL));
+	setlocale(LC_ALL, "Russian");
+	vector<int> arr;
+	int answer = 0;
+	while (true)
+	{
+		
+		print();
+		cin >> answer;
+		switch (answer)
+		{
+		case 1:
+		{
+			int number = 0;
+			cout << "Введите элемент." << endl;
+			cin >> number;
+			arr.push_back(number);
+			break;
+		}
+		case 2:
+		{
+			int number = 0;
+			int pos = 0;
+			cout << "Введите индекс." << endl;
+			cin >> pos;
+			cout << "Введите элемент." << endl;
+			cin >> number;
+			if (pos < 0|| pos > arr.size())
+			{
+				cout << "Error" << endl;
+			}
+			arr.insert(arr.begin() + pos, number);
+			break;
+		}
+		case 3:
+		{
+			arr.clear();
+			break;
+		}
+		case 4:
+		{
+			int index = 0;
+			cout << "Введите индекс" << endl;
+			cin >> index;
+			if (index < 0 || index > arr.size())
+			{
+				cout << "Error" << endl;
+			}
+			arr.erase(arr.begin() + index);
+			break;
+		}
+		case 5:
+		{
+			arr.pop_back();
+			break;
+		}
+		case 6:
+		{
+			for (int i = 0; i < arr.size(); i++)
+			{
+				cout << arr[i] <<" ";
+			}
+			cout << endl;
+			break;
+		}
+		case 7:
+		{
+			int max = arr[0];
+			for (int i = 1; i < arr.size(); i++)
+			{
+				if (max < arr[i])
+				{
+					max = arr[i];
+				}
+			}
+			cout << "Максимум: " <<" "<<max<< endl;
+			break;
+		}
+		case 8:
+		{
+			int min = arr[0];
+			for (int i = 1; i < arr.size(); i++)
+			{
+				if (min > arr[i])
+				{
+					min = arr[i];
+				}
+			}
+			cout << "Минимум: " << " " << min << endl;
+			break;
+		}
+		case 9:
+		{
+			for (int i = 1; i < arr.size(); ++i)
+			{
+				for (int r = 0; r < arr.size() - i; r++)
+				{
+					if (arr[r] < arr[r + 1])
+					{
+						swap(arr[r], arr[r + 1]);
+					}
+				}
+			}
+			break;
+		}
+		case 0:
+		{
+			cout << "Exit" << endl;
+			return 0;
+		}
+		default:
+		{
+			break;
+		}
+		}
+		system("pause");
+		system("cls");
+	}
+
+
+
+	system("pause");
+	return 0;
+}
+
+#include <iostream>
+#include <ctime>
+#include <vector>
+
+using namespace std;
+
+void print()
+{
+	cout << "1.Добавить элемент в массив." << endl;
+	cout << "2.Добавить элемент в массив по индексу." << endl;
+	cout << "3.Удалить все элементы." << endl;
+	cout << "4.Удалить элемент по индексу." << endl;
+	cout << "5.Удалить последний элемент." << endl;
+	cout << "6.Вывести массив." << endl;
+	cout << "7.Найти максимум." << endl;
+	cout << "8.Найти минимум." << endl;
+	cout << "9.Отсортировать массив по убыванию." << endl;
+	cout << "10.Удалить по значению.(не готово)" << endl;
+	cout << "0.Выход." << endl;
+}
+
+int main()
+{
+	
+	srand(time(NULL));
+	setlocale(LC_ALL, "Russian");
+	vector<int> arr;
+	int answer = 0;
+	while (true)
+	{
+		
+		print();
+		cin >> answer;
+		switch (answer)
+		{
+		case 1:
+		{
+			int number = 0;
+			cout << "Введите элемент." << endl;
+			cin >> number;
+			arr.push_back(number);
+			break;
+		}
+		case 2:
+		{
+			int number = 0;
+			int pos = 0;
+			cout << "Введите индекс." << endl;
+			cin >> pos;
+			cout << "Введите элемент." << endl;
+			cin >> number;
+			if (pos < 0|| pos > arr.size())
+			{
+				cout << "Error" << endl;
+			}
+			arr.insert(arr.begin() + pos, number);
+			break;
+		}
+		case 3:
+		{
+			arr.clear();
+			break;
+		}
+		case 4:
+		{
+			int index = 0;
+			cout << "Введите индекс" << endl;
+			cin >> index;
+			if (index < 0 || index > arr.size() + 1)
+			{
+				cout << "Error" << endl;
+			}
+			arr.erase(arr.begin() + index);
+			break;
+		}
+		case 5:
+		{
+			arr.pop_back();
+			break;
+		}
+		case 6:
+		{
+			for (int i = 0; i < arr.size(); i++)
+			{
+				cout << arr[i] <<" ";
+			}
+			cout << endl;
+			break;
+		}
+		case 7:
+		{
+			int max = arr[0];
+			for (int i = 1; i < arr.size(); i++)
+			{
+				if (max < arr[i])
+				{
+					max = arr[i];
+				}
+			}
+			cout << "Максимум: " <<" "<<max<< endl;
+			break;
+		}
+		case 8:
+		{
+			int min = arr[0];
+			for (int i = 1; i < arr.size(); i++)
+			{
+				if (min > arr[i])
+				{
+					min = arr[i];
+				}
+			}
+			cout << "Минимум: " << " " << min << endl;
+			break;
+		}
+		case 9:
+		{
+			for (int i = 1; i < arr.size(); ++i)
+			{
+				for (int r = 0; r < arr.size() - i; r++)
+				{
+					if (arr[r] < arr[r + 1])
+					{
+						swap(arr[r], arr[r + 1]);
+					}
+				}
+			}
+			break;
+		}
+		case 10:
+		{
+			break;
+		}
+		case 0:
+		{
+			cout << "Exit" << endl;
+			return 0;
+		}
+		default:
+		{
+			break;
+		}
+		}
+		system("pause");
+		system("cls");
+	}
+
+
+
+	system("pause");
+	return 0;
+}
+
+#include <iostream>
+#include <string>
+#include <vector>
+
+
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	string str;
+	getline(cin, str);
+	for (int i = 0; i < str.length(); i++)
+	{
+		if (str[i] == ' ')
+		{
+			if (str[i + 1] == '.')
+			{
+				str.erase(str.begin() + i);
+			}
+		}
+	}
+	for (int i = 0; i < str.length(); i++)
+	{
+		if (str[i] == ' ')
+		{
+			if (str[i + 1] == ',')
+			{
+				str.erase(str.begin() + i);
+			}
+		}
+	}
+	for (int i = 0; i < str.length(); i++)
+	{
+		if (str[i] == '.')
+		{
+			if (str[i + 1] == '.')
+			{
+				str.erase(str.begin() + i);
+			}
+		}
+	}
+	for (int i = 0; i < str.length(); i++)
+	{
+		if (str[i] == ',')
+		{
+			if (str[i + 1] == ',')
+			{
+				str.erase(str.begin() + i);
+			}
+		}
+	}
+	for (int i = 0; i < str.length(); i++)
+	{
+		if (str[i] == '.' && str[i + 1] != ' ')
+		{
+		str.insert(str.begin() + (i + 1), ' ');
+		i++;
+		}
+
+	}
+	for (int i = 0; i < str.length(); i++)
+	{
+		if (str[i] == ',' && str[i + 1] != ' ')
+		{
+			str.insert(str.begin() + (i + 1), ' ');
+			i++;
+		}
+
+	}
+	cout << str << endl;
+
+
+
+	system("pause");
+	return 0;
+}
+
+
+

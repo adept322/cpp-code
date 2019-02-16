@@ -1,0 +1,191 @@
+#include <iostream>
+
+using namespace std;
+
+
+void main()
+{
+	setlocale(LC_ALL,"Rus");
+	
+	double a,b,c;
+
+	
+	cout<<"Введите 1 катет"<<endl;
+	cin>>a;
+	cout<<"Введите 2 катет"<<endl;
+	cin>>b;
+    
+	cout<<"Гипотенуза"<<" = "<<sqrt((a * a)+(b * b))<<"см"<<endl;
+
+
+
+	system ("pause");
+}
+
+
+#include <iostream>
+
+using namespace std;
+
+
+void main()
+{
+	setlocale(LC_ALL,"Rus");
+	
+	float a;
+    float b;
+	float c;
+	cout<<"Введите первое число суммы"<<endl;
+	cin>>a;
+	cout<<"Введите второе число суммы"<<endl;
+	cin>>b;
+	cout<<"Введите число на которое делится сумма"<<endl;
+	cin>>c;
+
+	if (c == 0)
+	{cout<<"%Ошибка%"<<endl;}
+
+	cout<<" ( "<<a<<" + "<<b<<" ) "<<"/ "<<c<<" = "<<(a+b)/c<<endl;
+
+    system ("pause");
+}
+
+
+#include <iostream>
+
+using namespace std;
+
+
+void main()
+{
+	setlocale(LC_ALL,"Rus");
+
+	float a,b,c;
+	cout<<"Введите три числа"<<endl;
+	cin>>a;
+	cin>>b;
+	cin>>c;
+
+	if (a > b)
+	{ 
+	 if (a > b)
+	 { cout<<"Большее число"<<" "<<a<<endl;}
+	}
+
+	if (b > a)
+	{ 
+	 if (b > c)
+	 { cout<<"Большее число"<<" "<<b<<endl;}
+	}
+
+	if (c > a)
+	{ 
+	 if (c > b)
+	 { cout<<"Большее число"<<" "<<c<<endl;}
+	}
+	     
+
+#include <iostream>
+
+using namespace std;
+
+
+void main()
+{
+	setlocale(LC_ALL,"Rus");
+
+	float a,b,c;
+	cout<<"Введите три числа"<<endl;
+	cin>>a;
+	cin>>b;
+	cin>>c;
+
+	if (a > b)
+	{ 
+	 if (a > b)
+	 { cout<<"Большее число"<<" "<<a<<endl;}
+	}
+
+	if (b > a)
+	{ 
+	 if (b > c)
+	 { cout<<"Большее число"<<" "<<b<<endl;}
+	}
+
+	if (c > a)
+	{ 
+	 if (c > b)
+	 { cout<<"Большее число"<<" "<<c<<endl;}
+	}
+
+
+
+
+#include <iostream>
+
+using namespace std;
+
+
+void main()
+{
+	setlocale(LC_ALL,"Rus");
+
+	float a,b,c;
+	cout<<"Введите три числа"<<endl;
+	cin>>a;
+	cin>>b;
+	cin>>c;
+
+	if (a > b)
+	{ 
+         if (a > c)
+	     { cout<<"Большее число"<<" "<<a<<endl;}
+	     else
+	     { cout<<"Большее число"<<" "<<c<<endl;}
+	}
+
+	else
+	{ cout<<"Большее число"<<" "<<b<<endl;}
+
+
+	
+	
+
+    system ("pause");
+}
+
+
+#include <iostream>
+
+using namespace std;
+
+
+void main()
+{
+	setlocale(LC_ALL,"Rus");
+
+	float a,b,c;
+	cout<<"Введите три числа"<<endl;
+	cin>>a;
+	cin>>b;
+	cin>>c;
+
+	if (a >= b)
+	{ 
+         if (a >= c)
+	     { cout<<"Большее число"<<" "<<a<<endl;}
+	     else
+	     { cout<<"Большее число"<<" "<<c<<endl;}
+	}
+
+	else
+	{ cout<<"Большее число"<<" "<<b<<endl;}
+
+
+	
+	
+
+    system ("pause");
+}
+	     
+
