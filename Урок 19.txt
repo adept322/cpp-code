@@ -27,3 +27,39 @@ int main()
 	system("pause");
 	return 0;
 }
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+
+
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "Rus");
+	ifstream fin;
+	string text = " ";
+	string true_text = "";
+	int var = 0;
+	fin.open("goroskop.html");
+	char c;
+	while (!fin.eof())
+	{
+		fin >> c;
+		text.push_back(c);
+	}
+	fin.close();
+
+
+	int index = text.find("textContainer") + 73;
+	
+	for (int i = index + 71;text[i] != '<';i++)
+	{
+		cout << text[i];
+	}
+	cout << true_text << endl;
+	system("pause");
+	return 0;
+}
