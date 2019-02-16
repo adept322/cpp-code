@@ -1,1 +1,29 @@
 GitHUB
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+
+
+using namespace std;
+
+int main()
+{
+	int var = 0;
+	int sum = 0;
+	int count = 0;
+	ifstream fin;
+	fin.open("input.txt");
+	while(!fin.eof())
+	{
+		fin >> var;
+		sum = sum + var;
+		count++;
+	}
+	sum = sum - var;
+	fin.close();
+	cout << sum << endl;
+	cout << "Arifm: " << sum / count << endl;;
+	system("pause");
+	return 0;
+}
