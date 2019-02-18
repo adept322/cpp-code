@@ -1,0 +1,133 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <Windows.h>
+#include <ctime>
+
+using namespace std;
+
+void print_menu() //Меню программы
+{
+	cout << "<1><Register>" << endl;
+	cout << "<2><Verification>" << endl;
+	cout << "<0><Exit>" << endl;
+}
+int main()
+{
+	srand(time(NULL));
+	int answer = 0, number = 0;
+	int quantity_numbers = 0;
+	int small_registr = 0, big_registr = 0;
+	string verif_login, verif_password;
+	string base_login, base_password;
+	string entered_login, entered_password;
+	while (true) 
+	{
+		number = rand() % 1000; //Число прикрепляющееся к логину
+		system("pause");
+		system("cls"); 
+		print_menu(); //Вызов меню
+		cin >> answer;
+		switch (answer)
+		{
+		case 1:
+		{
+			cout << "@Enter login@" << endl; //Ввод логина
+			cin >> entered_login;  //Так как getline() не работает в fout-е, то используем cin>> 
+			while (true) //Цикл проверки пароля
+			{
+				cout << "@Enter password@" << endl; //Ввод пароля
+				cin >> entered_password;
+				for (int i = 0; i < entered_password.length(); i++) //Подсчет цифр
+				{
+					if (entered_password[i] == '1' || entered_password[i] == '2' || entered_password[i] == '3')
+					{
+						quantity_numbers++;
+					}
+					if (entered_password[i] == '4' || entered_password[i] == '5' || entered_password[i] == '6')
+					{
+						quantity_numbers++;
+					}
+					if (entered_password[i] == '7' || entered_password[i] == '8' || entered_password[i] == '9')
+					{
+						quantity_numbers++;
+					}
+					if (entered_password[i] == '0')
+					{
+						quantity_numbers++;
+					}
+				}
+				for (int i = 0; i < entered_password.length(); i++) //Подсчет регистров
+				{
+					if (entered_password[i] > 64 && entered_password[i] < 91) //Подсчет большого регистра
+					{
+						big_registr++;
+					}
+					if (entered_password[i] > 96 && entered_password[i] < 123) //Подсчет малого регистра
+					{
+						small_registr++;
+					}
+				}
+				if (quantity_numbers == 0) //Проверка на наличие цифр
+				{
+					cout << "@There are no numbers in the password@" << endl;
+					continue;
+				}
+				if (small_registr == 0 || big_registr == 0) //Проверка на наличие 2ух регистров
+				{
+					cout << "@No two registers in the password@" << endl;
+					continue;
+				}
+				if (entered_password.length() < 8) //Проверка на наличие 8ми символов в пароле
+				{
+					cout << "@The lack of eight characters@" << endl;
+					continue;
+				}
+				break;
+			}
+			entered_login[0] = toupper(entered_login[0]); //toupper первого символа логина
+			cout << "____________________" << endl; //Валидная информация 
+			cout << "@Login@: " << "_" << entered_login << number << endl;
+			cout << "@Password@: " << entered_password << endl;
+			cout << "____________________" << endl;
+			ofstream fout; //Поток
+			fout.open("C:\\Users\\Acer_Vitaliano\\Desktop\\test\\Database.txt"); //Открытие файла fout
+			fout << entered_login << "_" << number << " " << entered_password << endl; //Запись
+			fout.close(); //Закрытие файла fout
+			cout << "@Account registered@" << endl;
+			break;
+		}
+		case 2:
+		{
+			cout << "@Enter login@: " << endl;
+			cin >> verif_login;
+			cout << "@Enter password@: " << endl;
+			cin >> verif_password;
+			ifstream fin;//Поток
+			fin.open("C:\\Users\\Acer_Vitaliano\\Desktop\\test\\Database.txt"); //Открытие файла fin
+			fin>> base_login>> base_password;
+			fin.close(); //Закрытие файла fin
+			if (verif_login == base_login && verif_password == base_password) //Проверка совпадения
+			{
+				cout << "Successfully@" << endl;
+			}
+			else
+			{
+				cout << "@Unsuccessfully@" << endl;
+				cout << "@Invalid login or password@" << endl;
+			}
+			break;
+		}
+		case 0:
+		{
+			return 0;
+		}
+		default:
+		{
+			continue;
+		}
+		}
+	}
+	system("pause");
+	return 0;
+}
