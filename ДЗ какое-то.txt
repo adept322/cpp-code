@@ -1,0 +1,41 @@
+#include <iostream>
+#include <ctime>
+
+using namespace std;
+
+int main()
+{
+	srand(time(NULL));
+	const int x = 8, y = 10; //x - строки , y - столбцы; Будет смотрется интереснее если x = 28, а y = 59;
+	int array[x][y];
+	int zero = 0;
+	int pos_max = 0;
+	int zero_max = 0;
+	for (int i = 0; i < x; i++)
+	{
+		for (int j = 0; j < y; j++)
+		{
+			array[i][j] = rand() % 2;
+			if (array[i][j] == 0)
+				zero = zero + 1;
+		}
+		if (zero_max < zero)
+		{
+			pos_max = i;
+			zero_max = zero;
+		}
+		zero = 0;
+	}
+	cout << "Matrix" << endl;
+	for (int i = 0; i < x; i++)
+	{
+		for (int j = 0; j < y; j++)
+		{
+			cout << array[i][j] << " ";
+		}
+		cout << endl;
+	}
+	cout <<"Zero: "<< pos_max + 1 << endl;
+	system("pause");
+	return 0;
+}

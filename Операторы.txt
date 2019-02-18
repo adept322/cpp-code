@@ -1,0 +1,48 @@
+cout<< -вывод в приложение
+cin>> - ввод в приложение
+
+if (&& || )  условия;если    && - и;|| - или; в условиях пишется
+{
+
+}
+else иначе
+{
+
+}
+
+while(true) цикл бесконечный
+{
+
+}
+
+sqrt() выводит корень
+
+> больше
+< меньше
+= присвоение значения переменной
+<= меньше равно
+>= больше равно
+== равно
+!= не равно
+switch
+case.....
+default:
+break
+continue
+
+Типы даннных
+int
+float
+double
+DWORD
+bool
+char
+void
+int
+return 0
+int* array = new int[size];
+vector<int> array;
+string array;
+ifstream fin;
+ofstream fout;
+fout.open

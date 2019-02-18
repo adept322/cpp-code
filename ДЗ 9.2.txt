@@ -1,0 +1,37 @@
+#include <iostream>
+
+using namespace std;
+
+void print_menu()
+{
+	cout << "1.Enter number !" << endl;
+}
+int Fact(int x)
+{
+	float a = 1;
+	if (x == 0)
+	{
+		return 1;
+	}
+	if (x < 0)
+	{
+		return 0;
+	}
+	if (x > 0)
+	{
+		for (int i = 1; i <= x; i++)
+		{
+			a = a * i;
+		}
+		return a;
+	}
+}
+int main()
+{
+	int number;
+	print_menu();
+	cin >> number;
+	cout << "Factorial = " << Fact(number) << endl;
+	system("pause");
+	return 0;
+}

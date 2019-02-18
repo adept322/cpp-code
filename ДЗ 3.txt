@@ -1,0 +1,54 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+
+	float a, b, c, d;
+	cout << "By Vitaliy" << endl;
+	cout << "Введите поочерёдно четыре числа." << endl;
+	
+	cin >> a;
+	cin >> b;
+	cin >> c;
+	cin >> d;
+
+	
+	if (a == b && a == c && a == d)
+	{
+		cout << a<< endl;
+	} 
+
+	if (a > b && a > c && a > d)
+	{
+		cout << a << endl;
+	}
+
+	if (b > a && b > c && b > d)
+	{
+		cout << b << endl;
+	}
+
+	if (c > a && c > b && c > d)
+	{
+		cout << c << endl;
+	}
+
+	if (d > a && d > b && d > c)
+	{
+		cout << d << endl;
+	}
+
+	
+
+    cout << "Большее число" << endl;
+	
+    system("pause");
+}
+	
+
+
+	

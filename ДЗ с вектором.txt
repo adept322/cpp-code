@@ -1,0 +1,140 @@
+#include <iostream>
+#include <vector>
+#include <Windows.h>
+
+using namespace std;
+
+int main()
+{
+	vector<float> first_room;
+	vector<float> second_room;
+	vector<float> third_room;
+	float weight = 0,delete_weight = 0;
+	int answer = 0;
+	while (true)
+	{
+		system("pause");
+		system("cls");
+		cout << "1.Enter the weight of the new parcel." << endl;
+		cout << "2.Delete parsel with weight." << endl;
+		cout << "3.Show database." << endl;
+		cout << "0.Exit." << endl;
+		cin >> answer;
+		switch (answer)
+		{
+		case 0:
+		{
+			cout << "Exit." << endl;
+			return 0;
+		}
+		case 1:
+		{
+			cout << "Enter weight: " << endl;
+			cin >> weight;
+			if (weight == 0)
+			{
+				cout << "Exit." << endl;
+				return 0;
+			}
+			if (weight <= 1 && weight > 0)
+			{
+				first_room.push_back(weight);
+			}
+			if (weight > 1 && weight <= 7)
+			{
+				second_room.push_back(weight);
+			}
+			if (weight > 7)
+			{
+				third_room.push_back(weight);
+			}
+			weight = 0;
+			cout << "First room: ";
+			for (int i = 0; i < first_room.size(); i++)
+			{
+				cout << first_room[i] << "kg, ";
+			}
+			cout << endl;
+			cout << "Second room: ";
+			for (int i = 0; i < second_room.size(); i++)
+			{
+				cout << second_room[i] << "kg, ";
+			}
+			cout << endl;
+			cout << "Third room: ";
+			for (int i = 0; i < third_room.size(); i++)
+			{
+				cout << third_room[i] << "kg, ";
+			}
+			cout << endl;
+			break;
+		}
+		case 2:
+		{
+			cout << "Enter weight of the parcel to be removed." << endl;
+			cin >> delete_weight;
+			if (delete_weight <= 1 && weight > 0)
+			{
+				for (int i = 0; i < first_room.size(); i++)
+				{
+					if (first_room[i] == delete_weight)
+					{
+						first_room.erase(first_room.begin() + i);
+					}
+				}
+			}
+			if (delete_weight > 1 && weight <= 7)
+			{
+				for (int i = 0; i < second_room.size(); i++)
+				{
+					if (second_room[i] == delete_weight)
+					{
+						second_room.erase(second_room.begin() + i);
+					}
+				}
+			}
+			if (delete_weight > 7)
+			{
+				for (int i = 0; i < third_room.size(); i++)
+				{
+					if (third_room[i] == delete_weight)
+					{
+						third_room.erase(third_room.begin() + i);
+					}
+				}
+			}
+			break;
+		}
+		case 3:
+		{
+			cout << "First room: ";
+			for (int i = 0; i < first_room.size(); i++)
+			{
+				cout << first_room[i] << "kg, ";
+			}
+			cout << endl;
+			cout << "Second room: ";
+			for (int i = 0; i < second_room.size(); i++)
+			{
+				cout << second_room[i] << "kg, ";
+			}
+			cout << endl;
+			cout << "Third room: ";
+			for (int i = 0; i < third_room.size(); i++)
+			{
+				cout << third_room[i] << "kg, ";
+			}
+			cout << endl;
+			break;
+		}
+		default:
+		{
+			cout << "Error." << endl;
+			continue;
+		}
+		}
+		
+	}
+	system("pause");
+	return 0;
+}

@@ -1,0 +1,35 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+	string word;
+	cout << "Enter word: " << endl;
+	getline(cin, word);
+	for (int i = 0; i < word.length(); i++)
+	{
+		if ((int)word[i] == 48 || (int)word[i] == 49|| (int)word[i] == 50)
+		{
+			word[i] = 32;
+		}
+		if ((int)word[i] == 51 || (int)word[i] == 52 || (int)word[i] == 53)
+		{
+			word[i] = 32;
+		}
+		if ((int)word[i] == 54 || (int)word[i] == 55 || (int)word[i] == 56)
+		{
+			word[i] = 32;
+		}
+		if ((int)word[i] == 57 )
+		{
+			word[i] = 32;
+		}
+	}
+	cout << word << endl;
+
+
+	system("pause");
+	return 0;
+}

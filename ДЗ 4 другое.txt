@@ -1,0 +1,31 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+
+	while (true)
+	{
+		float in, count = 0;
+
+		cout << "¬ведите число:" << endl;
+		cin >> in;
+
+		while (count < 10)
+		{
+			count = count + 1;
+			cout << count << " * " << in << " = " << count * in << endl;
+		}
+
+		system("pause");
+	}
+}
+
+
+
+
+
+

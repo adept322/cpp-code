@@ -1,0 +1,36 @@
+case 2:
+		{
+			cout << "Enter weight of the parcel to be removed." << endl;
+			cin >> delete_weight;
+			if (weight <= 1 && weight > 0)
+			{
+				for (int i = 0; i < first_room.size(); i++)
+				{
+					if (first_room[i] = delete_weight)
+					{
+						first_room.erase(first_room.begin() + i);
+					}
+				}
+			}
+			if (weight > 1 && weight <= 7)
+			{
+				for (int i = 0; i < second_room.size(); i++)
+				{
+					if (second_room[i] = delete_weight)
+					{
+						second_room.erase(second_room.begin() + i);
+					}
+				}
+			}
+			if (weight > 7)
+			{
+				for (int i = 0; i < third_room.size(); i++)
+				{
+					if (third_room[i] = delete_weight)
+					{
+						third_room.erase(third_room.begin() + i);
+					}
+				}
+			}
+			break;
+		}

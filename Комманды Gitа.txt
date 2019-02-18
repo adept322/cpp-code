@@ -1,0 +1,9 @@
+git config --global user.name "Виталий Черников"
+git config --global user.mail "chernickovvit@yandex.ru"
+git init - новый репозиторий
+git add . - добавление файлов
+git commit -m "Коммит"
+git status - статус
+git pull -принять
+got push - залить
+git remote - управление репозиториями

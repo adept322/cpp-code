@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");    
+
+	float a;   
+	float b;
+	cout << "Designed by Vitaliy" << endl;
+	cout << "Данная программа из 2 введенных чисел выдаёт 1 наибольшее." << endl;   
+
+    cout << "Введите первое число" << endl;   
+	cin >> a;                                 
+	cout << "Введите второе число" << endl;   
+	cin >> b;                                 
+    if (a > b)
+	{cout << "Большее число" << " " << a << endl;}
+    if (b > a)
+	{cout << "Большее число" << " " << b << endl;}
+    if (a = b)
+	{cout << "Числа Равны" << endl;}
+	cout << "%Работа завершена%" << endl;
+    system("pause");
+}

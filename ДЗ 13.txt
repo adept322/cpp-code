@@ -1,0 +1,63 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	int size = 0;
+	int bufer = 0;
+	cout << "Enter size of the array." << endl;
+	cin >> size;
+	int* array = new int[size];
+	for (int i = 0; i < size; i++)
+	{
+		cout << "Enter number. Numb: " << i + 1 << "." << endl;
+		cin >> array[i];
+	}
+	cout <<"To: "<< endl;
+	for (int i = 0; i < size; i++)
+	{
+		cout << array[i] << " ";
+	}
+	cout << endl;
+	cout << "After: " << endl;
+	for (int i = 0; i < size; i++)
+	{
+		if (array[i] < 0)
+		{
+			array[i] = 0;
+		}
+	}
+	for (int i = 0; i < size; i++)
+	{
+		cout << array[i] << " ";
+	}
+	int temp = 0;
+	for (int i = 1; i < size; ++i)
+	{
+		for (int r = 0; r < size - i; r++)
+		{
+			if (array[r] < array[r + 1])
+			{
+				temp = array[r];
+				array[r] = array[r + 1];
+				array[r + 1] = temp;
+			}
+		}
+	}
+	cout << "After++: " << endl;
+	for (int i = 0; i < size; i++)
+	{
+		cout << array[i] << " ";
+	}
+
+	
+	cout << endl;
+	delete [] array;
+	system("pause");
+}
+
+	
+	
+
+	

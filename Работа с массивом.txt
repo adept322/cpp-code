@@ -1,0 +1,144 @@
+#include <iostream>
+#include <ctime>
+using namespace std;
+
+void print_menu()
+{
+	cout << "1.Заполнить массив в диапвзоне от 0 до 100." << endl;
+	cout << "2.Заполнить массив с помощью ввода." << endl;
+	cout << "3.Вывести массив." << endl;
+	cout << "4.Отсортировать массив в порядке возрастания." << endl;
+	cout << "5.Найти максимальный элемент массива." << endl;
+	cout << "6.Найти минимальный элемент массива." << endl;
+	cout << "0.Выход." << endl;
+}
+
+void fill_array_random(int* array, int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		array[i] = rand() % 100;
+	}
+}
+
+void fill_array_cin(int* array, int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		cin>>array[i];
+	}
+}
+
+void print_array(int* array, int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		cout << array[i] << " ";
+	}
+}
+
+void sort_array(int* array, int size)
+{
+	for (int i = 0; i < size - 1; i++) 
+	{
+		for (int j = 0; j < size - i - 1; j++) 
+		{
+			if (array[j] > array[j + 1]) 
+			{
+				swap(array[j], array[j + 1]);
+			}
+		}
+	}
+}
+
+int max_array(int* array, int size)
+{
+	int max = array[0];
+	for (int i = 1; i < size; i++)
+	{
+		if (max <= array[i])
+		{
+			max = array[i];
+		}
+	}
+	return max;
+}
+
+int min_array(int* array, int size)
+{
+	int min = array[0];
+	for (int i = 1; i < size; i++)
+	{
+		if (min >= array[i])
+		{
+			min = array[i];
+		}
+	}
+	return min;
+}
+
+int main()
+{
+	setlocale(LC_ALL, "Rus");
+	srand(time(NULL));
+	int size = 0, answer = 0;
+	cout << "Введите размер массива, который хотите создать." << endl;
+	cin >> size;
+	int* array = new int[size];
+	while (true)
+	{
+			print_menu();
+			cin >> answer;
+			switch (answer)
+			{
+			case 1:
+			{
+				fill_array_random(array, size);
+				cout << "@Массив заполнен@" << endl;
+				break;
+			}
+			case 2:
+			{
+				cout << "Вводите элементы массива." << endl;
+				fill_array_cin(array, size);
+				cout << "@Массив заполнен@" << endl;
+				break;
+			}
+			case 3:
+			{
+				print_array(array, size);
+				cout << "@Массив выведен@" << endl;
+				break;
+			}
+			case 4:
+			{
+				sort_array(array, size);
+				cout << "@Массив отсортирован@" << endl;
+				break;
+			}
+			case 5:
+			{
+				cout << "Максимальный элемент массива: " << max_array(array, size) << endl;
+				break;
+			}
+			case 6:
+			{
+				cout << "Минимальный элемент массива: " << min_array(array, size) << endl;
+				break;
+			}
+			case 0:
+			{
+				return 0;
+			}
+			default:
+			{
+				cout << "@Неизвестная команда@" << endl;
+				break;
+			}
+			}
+		
+	}
+	delete[] array;
+	system("pause");
+	return 0;
+}

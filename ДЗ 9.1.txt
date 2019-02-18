@@ -1,0 +1,22 @@
+#include <iostream>
+
+using namespace std;
+
+void print_menu()
+{
+	cout << "1.Enter radius" << endl;
+	cout << "2.Enter hight" << endl;
+}
+float finding_volume_cone(float R, float H)
+{
+	return 0.33333333333*3.1415*R*R*H;
+}
+int main()
+{
+	float radius,hight;
+	print_menu();
+	cin >> radius >> hight;
+	cout << "Volume cone = " << finding_volume_cone(radius, hight) << " units." << endl;
+	system("pause");
+	return 0;
+}

@@ -1,0 +1,27 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	char answer = 'y';
+	float number1 = 0, number2 = 0;
+	while (true)
+	{
+		if (answer == 'y')
+		{
+			cout << "Введите два числа." << endl;
+			cin >> number1 >> number2;
+			cout << number1 << " + " << number2 << " = " << number1 + number2 << endl;
+			cout << "Продолжить?(y/n)" << endl;
+			cin >> answer;
+		}
+		else
+		{
+			break;
+		}
+	}
+	system("pause");
+}
+

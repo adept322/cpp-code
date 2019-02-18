@@ -1,0 +1,29 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	while (true)
+	{ 
+	setlocale(LC_ALL, "Russian");
+	int a=0, b=1, c;
+	cout << "¬ведите число" << endl;
+	cin >> c;
+	
+	while (c <= 0)
+	{
+		cout << " ќшибка, введите положительное число! "<<endl;
+		cin >> c;
+	}
+	while (c > 0)
+	{
+		a = a + b;
+		b = a - b;
+		c = c - 1;
+		cout << a << " ";
+	}
+	}
+	
+	system("pause");
+}

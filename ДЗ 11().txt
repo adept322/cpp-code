@@ -1,0 +1,319 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	int input = 0;
+	int num1 = 0, num2 = 0, num3 = 0;
+	cout << "Enter number" << endl;
+	cin >> input;
+	num1 = input / 100;
+	num2 = (input % 100) / 10;
+	num3 = input % 10;
+	cout << num1 << num2 << num3 << endl;
+	if (num1 == 0)
+	{
+		cout << "@@@@@" << endl;
+		cout << "@   @" << endl;
+		cout << "@   @" << endl;
+		cout << "@   @" << endl;
+		cout << "@   @" << endl;
+		cout << "@   @" << endl;
+		cout << "@@@@@" << endl;
+	}
+	if (num1 == 1)
+	{
+		cout << "  @  " << endl;
+		cout << " @@  " << endl;
+		cout << "  @  " << endl;
+		cout << "  @  " << endl;
+		cout << "  @  " << endl;
+		cout << "  @  " << endl;
+		cout << "@@@@@" << endl;
+	}
+	if (num1 == 2)
+	{
+		cout << "@@@@@" << endl;
+		cout << "    @" << endl;
+		cout << "    @" << endl;
+		cout << "@@@@@" << endl;
+		cout << "@    " << endl;
+		cout << "@    " << endl;
+		cout << "@@@@@" << endl;
+	}
+	if (num1 == 3)
+	{
+		cout << "@@@@@" << endl;
+		cout << "@   @" << endl;
+		cout << "    @" << endl;
+		cout << "  @@@" << endl;
+		cout << "    @" << endl;
+		cout << "    @" << endl;
+		cout << "@@@@@" << endl;
+	}
+	if (num1 == 4)
+	{
+		cout << "@   @" << endl;
+		cout << "@   @" << endl;
+		cout << "@   @" << endl;
+		cout << "@@@@@" << endl;
+		cout << "    @" << endl;
+		cout << "    @" << endl;
+		cout << "    @" << endl;
+	}
+	if (num1 == 5)
+	{
+		cout << "@@@@@" << endl;
+		cout << "@    " << endl;
+		cout << "@    " << endl;
+		cout << "@@@@@" << endl;
+		cout << "    @" << endl;
+		cout << "    @" << endl;
+		cout << "@@@@@" << endl;
+	}
+	if (num1 == 6)
+	{
+		cout << "@@@@@" << endl;
+		cout << "@    " << endl;
+		cout << "@    " << endl;
+		cout << "@@@@@" << endl;
+		cout << "@   @" << endl;
+		cout << "@   @" << endl;
+		cout << "@@@@@" << endl;
+	}
+	if (num1 == 7)
+	{
+		cout << "@@@@@" << endl;
+		cout << "    @" << endl;
+		cout << "    @" << endl;
+		cout << "    @" << endl;
+		cout << "    @" << endl;
+		cout << "    @" << endl;
+		cout << "    @" << endl;
+	}
+	if (num1 == 8)
+	{
+		cout << "@@@@@" << endl;
+		cout << "@   @" << endl;
+		cout << "@   @" << endl;
+		cout << "@@@@@" << endl;
+		cout << "@   @" << endl;
+		cout << "@   @" << endl;
+		cout << "@@@@@" << endl;
+	}
+	if (num1 == 9)
+	{
+		cout << "@@@@@" << endl;
+		cout << "@   @" << endl;
+		cout << "@   @" << endl;
+		cout << "@@@@@" << endl;
+		cout << "    @" << endl;
+		cout << "    @" << endl;
+		cout << "@@@@@" << endl;
+	}
+	if (num2 == 0)
+	{
+		cout << "@@@@@" << endl;
+		cout << "@   @" << endl;
+		cout << "@   @" << endl;
+		cout << "@   @" << endl;
+		cout << "@   @" << endl;
+		cout << "@   @" << endl;
+		cout << "@@@@@" << endl;
+	}
+	if (num2 == 1)
+	{
+		cout << "  @  " << endl;
+		cout << " @@  " << endl;
+		cout << "  @  " << endl;
+		cout << "  @  " << endl;
+		cout << "  @  " << endl;
+		cout << "  @  " << endl;
+		cout << "@@@@@" << endl;
+	}
+	if (num2 == 2)
+	{
+		cout << "@@@@@" << endl;
+		cout << "    @" << endl;
+		cout << "    @" << endl;
+		cout << "@@@@@" << endl;
+		cout << "@    " << endl;
+		cout << "@    " << endl;
+		cout << "@@@@@" << endl;
+	}
+	if (num2 == 3)
+	{
+		cout << "@@@@@" << endl;
+		cout << "@   @" << endl;
+		cout << "    @" << endl;
+		cout << "  @@@" << endl;
+		cout << "    @" << endl;
+		cout << "    @" << endl;
+		cout << "@@@@@" << endl;
+	}
+	if (num2 == 4)
+	{
+		cout << "@   @" << endl;
+		cout << "@   @" << endl;
+		cout << "@   @" << endl;
+		cout << "@@@@@" << endl;
+		cout << "    @" << endl;
+		cout << "    @" << endl;
+		cout << "    @" << endl;
+	}
+	if (num2 == 5)
+	{
+		cout << "@@@@@" << endl;
+		cout << "@    " << endl;
+		cout << "@    " << endl;
+		cout << "@@@@@" << endl;
+		cout << "    @" << endl;
+		cout << "    @" << endl;
+		cout << "@@@@@" << endl;
+	}
+	if (num2 == 6)
+	{
+		cout << "@@@@@" << endl;
+		cout << "@    " << endl;
+		cout << "@    " << endl;
+		cout << "@@@@@" << endl;
+		cout << "@   @" << endl;
+		cout << "@   @" << endl;
+		cout << "@@@@@" << endl;
+	}
+	if (num2 == 7)
+	{
+		cout << "@@@@@" << endl;
+		cout << "    @" << endl;
+		cout << "    @" << endl;
+		cout << "    @" << endl;
+		cout << "    @" << endl;
+		cout << "    @" << endl;
+		cout << "    @" << endl;
+	}
+	if (num2 == 8)
+	{
+		cout << "@@@@@" << endl;
+		cout << "@   @" << endl;
+		cout << "@   @" << endl;
+		cout << "@@@@@" << endl;
+		cout << "@   @" << endl;
+		cout << "@   @" << endl;
+		cout << "@@@@@" << endl;
+	}
+	if (num2 == 9)
+	{
+		cout << "@@@@@" << endl;
+		cout << "@   @" << endl;
+		cout << "@   @" << endl;
+		cout << "@@@@@" << endl;
+		cout << "    @" << endl;
+		cout << "    @" << endl;
+		cout << "@@@@@" << endl;
+	}
+	if (num3 == 0)
+	{
+		cout << "@@@@@" << endl;
+		cout << "@   @" << endl;
+		cout << "@   @" << endl;
+		cout << "@   @" << endl;
+		cout << "@   @" << endl;
+		cout << "@   @" << endl;
+		cout << "@@@@@" << endl;
+	}
+	if (num3 == 1)
+	{
+		cout << "  @  " << endl;
+		cout << " @@  " << endl;
+		cout << "  @  " << endl;
+		cout << "  @  " << endl;
+		cout << "  @  " << endl;
+		cout << "  @  " << endl;
+		cout << "@@@@@" << endl;
+	}
+	if (num3 == 2)
+	{
+		cout << "@@@@@" << endl;
+		cout << "    @" << endl;
+		cout << "    @" << endl;
+		cout << "@@@@@" << endl;
+		cout << "@    " << endl;
+		cout << "@    " << endl;
+		cout << "@@@@@" << endl;
+	}
+	if (num3 == 3)
+	{
+		cout << "@@@@@" << endl;
+		cout << "@   @" << endl;
+		cout << "    @" << endl;
+		cout << "  @@@" << endl;
+		cout << "    @" << endl;
+		cout << "    @" << endl;
+		cout << "@@@@@" << endl;
+	}
+	if (num3 == 4)
+	{
+		cout << "@   @" << endl;
+		cout << "@   @" << endl;
+		cout << "@   @" << endl;
+		cout << "@@@@@" << endl;
+		cout << "    @" << endl;
+		cout << "    @" << endl;
+		cout << "    @" << endl;
+	}
+	if (num3 == 5)
+	{
+		cout << "@@@@@" << endl;
+		cout << "@    " << endl;
+		cout << "@    " << endl;
+		cout << "@@@@@" << endl;
+		cout << "    @" << endl;
+		cout << "    @" << endl;
+		cout << "@@@@@" << endl;
+	}
+	if (num3 == 6)
+	{
+		cout << "@@@@@" << endl;
+		cout << "@    " << endl;
+		cout << "@    " << endl;
+		cout << "@@@@@" << endl;
+		cout << "@   @" << endl;
+		cout << "@   @" << endl;
+		cout << "@@@@@" << endl;
+	}
+	if (num3 == 7)
+	{
+		cout << "@@@@@" << endl;
+		cout << "    @" << endl;
+		cout << "    @" << endl;
+		cout << "    @" << endl;
+		cout << "    @" << endl;
+		cout << "    @" << endl;
+		cout << "    @" << endl;
+	}
+	if (num3 == 8)
+	{
+		cout << "@@@@@" << endl;
+		cout << "@   @" << endl;
+		cout << "@   @" << endl;
+		cout << "@@@@@" << endl;
+		cout << "@   @" << endl;
+		cout << "@   @" << endl;
+		cout << "@@@@@" << endl;
+	}
+	if (num3 == 9)
+	{
+		cout << "@@@@@" << endl;
+		cout << "@   @" << endl;
+		cout << "@   @" << endl;
+		cout << "@@@@@" << endl;
+		cout << "    @" << endl;
+		cout << "    @" << endl;
+		cout << "@@@@@" << endl;
+	}
+	
+	system("pause");
+	return 0;
+}
+

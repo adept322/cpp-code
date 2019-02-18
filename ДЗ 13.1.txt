@@ -1,0 +1,40 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	int v_taxi = 0, cena = 0, v_people = 0, S = 0, time = 0;
+	int buf1 = 0, buf2 = 0;
+	cout << "Введите расстояние(км): " << endl;
+	cin >> S;
+	cout << "Введите время(ч): " << endl;
+	cin >> time;
+	cout << "Введите скорость такси(км/ч): " << endl;
+	cin >> v_taxi;
+	cout << "Введите стоимость такси (руб/км): " << endl;
+	cin >> cena;
+	cout << "Введите скорость пешком(км/ч): " << endl;
+	cin >> v_people;
+	buf1 = v_people * time;
+	buf2 = v_taxi * time;
+	if (buf1 >= S)
+	{
+		cout << "Можно успеть пешком!" << endl;
+	}
+	else
+	{
+		if (buf2 < S)
+		{
+			cout << "Не успеть!" << endl;
+		}
+		else
+		{
+			cout << "Можно успеть на такси за: " << cena * S << " Руб." << endl;
+		}
+	}
+
+	system("pause");
+	return 0;
+}

@@ -1,0 +1,35 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+
+	float in, count = 0;
+	cout << "                          Таблица умножения введённого числа" << endl;
+	cout << "                          ----------------------------------" << endl;
+	cout << " " << endl;
+	cout << "Введите число:" << endl;
+	cin >> in;
+
+	while (count < 10)
+	{
+		count = count + 1;
+		cout << count << " * " << in << " = " << count * in << endl;
+	}
+
+	system("pause");
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,58 @@
+#include <iostream>
+#include <vector>
+#include <Windows.h>
+
+using namespace std;
+
+int main()
+{
+	vector<float> first_room;
+	vector<float> second_room;
+	vector<float> third_room;
+	int weight = 0;
+	while (true)
+	{
+		system("pause");
+		system("cls");
+		cout << "Enter the weight of the new parcel: " << endl;
+		cin >> weight;
+		if (weight == 0)
+		{
+			cout << "Exit." << endl;
+			return 0;
+		}
+		if (weight <= 1 && weight > 0)
+		{
+			first_room.push_back(weight);
+		}
+		if (weight > 1 && weight <= 7)
+		{
+			second_room.push_back(weight);
+		}
+		if (weight > 7)
+		{
+			third_room.push_back(weight);
+		}
+		weight = 0;
+		cout << "First room: ";
+		for (int i = 0; i < first_room.size(); i++)
+		{
+			cout << first_room[i] << ", ";
+		}
+		cout << endl;
+		cout << "Second room: ";
+		for (int i = 0; i < second_room.size(); i++)
+		{
+			cout << second_room[i] << ", ";
+		}
+		cout << endl;
+		cout << "Third room: ";
+		for (int i = 0; i < third_room.size(); i++)
+		{
+			cout << third_room[i] << ", ";
+		}
+		cout << endl;
+	}
+	system("pause");
+	return 0;
+}

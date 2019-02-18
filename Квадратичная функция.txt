@@ -1,0 +1,28 @@
+#include <iostream>
+
+using namespace std;
+
+void print_menu()
+{
+	cout << "1.Enter left" << endl;
+	cout << "2.Enter right" << endl;
+	cout << "3.Enter step" << endl;
+}
+int square_number(float number)
+{
+	return number * number;
+}
+
+int main()
+{
+	float left = 0, right = 0, step = 0;
+    print_menu();
+	cin >> left >> right >> step;
+	cout << "x " << " y" << endl;
+	for (float i = left; i < right; i = i + step)
+	{
+		cout << i << " , " << square_number(i) << endl;
+	}
+	system("pause");
+	return 0;
+}

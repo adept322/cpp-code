@@ -1,0 +1,36 @@
+#include <iostream>
+#include <string>
+#include <vector>
+
+using namespace std;
+
+int main()
+{
+	string str;
+	string word;
+	getline(cin, str);
+ 	cin >> word;
+	int o = 1;
+	for (int i = 0; i < str.length(); i++)
+	{
+		if (str[i] == word[0])
+		{
+			for (int j = i; j < word.length(); j++)
+			{
+				if (str[j] != word[o])
+				{
+					break;
+				}
+				o++;
+			}
+			for (int k = i; k < word.length(); k++)
+			{
+				str[k] = '*';
+			}
+		}
+
+	}
+	cout << str << endl;
+	system("pause");
+	return 0;
+}

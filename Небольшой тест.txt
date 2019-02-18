@@ -1,0 +1,241 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	int answer1 = 0, answer2 = 0;
+	int answer3 = 0, answer4 = 0;
+	int answer5 = 0, answer6 = 0;
+	int balls = 0;
+	int no_balls = 0;
+	cout << "Тест" << endl;
+	cout << "A} В чем измеряется Q - количестово теплоты?" << endl;
+	cout << "1) В Джоулях" << endl;
+	cout << "2) В Амперах" << endl;
+	cout << "3) В Килограммах" << endl;
+	cin >> answer1;
+	switch (answer1)
+	{
+	case 1:
+	{
+		balls = balls + 1;
+		cout << "{Верно}" << endl;
+		break;
+	}
+	case 2:
+	{
+		no_balls = no_balls + 1;
+		cout << "{Неверно}" << endl;
+		break;
+	}
+	case 3:
+	{
+		no_balls = no_balls + 1;
+		cout << "{Неверно}" << endl;
+		break;
+	}
+	default:
+	{
+		no_balls = no_balls + 1;
+		cout << "{Неверно}" << endl;
+		break;
+	}
+	}
+	cout << "B} Сколько жизней у кота?" << endl;
+	cout << "1) 1 жизнь" << endl;
+	cout << "2) 9 жизней" << endl;
+	cout << "3) 3 жизни" << endl;
+	cin >> answer2;
+	switch (answer2)
+	{
+	case 1:
+	{
+		balls = balls + 1;
+		cout << "{Верно}" << endl;
+		break;
+	}
+	case 2:
+	{
+		balls = balls + 1;
+		cout << "{Верно}" << endl;
+		break;
+	}
+	case 3:
+	{
+		no_balls = no_balls + 1;
+		cout << "{Неверно}" << endl;
+		break;
+	}
+	default:
+	{
+		no_balls = no_balls + 1;
+		cout << "{Неверно}" << endl;
+		break;
+	}
+	}
+	cout << "B} Какова скорость света?" << endl;
+	cout << "1) ~300 000км\\с " << endl;
+	cout << "2) ~345 000км\\с" << endl;
+	cout << "3) ~200 000км\\с" << endl;
+	cin >> answer3;
+	switch (answer1)
+	{
+	case 1:
+	{
+		balls = balls + 1;
+		cout << "{Верно}" << endl;
+		break;
+	}
+	case 2:
+	{
+		no_balls = no_balls + 1;
+		cout << "{Неверно}" << endl;
+		break;
+	}
+	case 3:
+	{
+		no_balls = no_balls + 1;
+		cout << "{Неверно}" << endl;
+		break;
+	}
+	default:
+	{
+		no_balls = no_balls + 1;
+		cout << "{Неверно}" << endl;
+		break;
+	}
+	}
+	cout << "B} Сколько океанов, морей (не считая Каспийского) омывают Россию?" << endl;
+	cout << "1) 1 океан, 12 морей" << endl;
+	cout << "2) 4 океана. 13 морей" << endl;
+	cout << "3) 3 океана, 12 морей" << endl;
+	cin >> answer4;
+	switch (answer4)
+	{
+	case 1:
+	{
+		no_balls = no_balls + 1;
+		cout << "{Неверно}" << endl;
+		break;
+	}
+	case 2:
+	{
+		no_balls = no_balls + 1;
+		cout << "{Неверно}" << endl;
+		break;
+	}
+	case 3:
+	{
+		balls = balls + 1;
+		cout << "{Верно}" << endl;
+		break;
+	}
+	default:
+	{
+		no_balls = no_balls + 1;
+		cout << "{Неверно}" << endl;
+		break;
+	}
+	}
+	cout << "B} Сколько краев в РФ?" << endl;
+	cout << "1) 2 края" << endl;
+	cout << "2) 3 края" << endl;
+	cout << "3) 1 край" << endl;
+	cin >> answer5;
+	switch (answer5)
+	{
+	case 1:
+	{
+		no_balls = no_balls + 1;
+		cout << "{Неверно}" << endl;
+		break;
+	}
+	case 2:
+	{
+		balls = balls + 1;
+		cout << "{Верно}" << endl;
+		break;
+	}
+	case 3:
+	{
+		no_balls = no_balls + 1;
+		cout << "{Неверно}" << endl;
+		break;
+	}
+	default:
+	{
+		no_balls = no_balls + 1;
+		cout << "{Неверно}" << endl;
+		break;
+	}
+	}
+	cout << "B} Сколько сантиметров в 1 дюйме?" << endl;
+	cout << "1) 2,54см" << endl;
+	cout << "2) 3,54см" << endl;
+	cout << "3) 2,27см край" << endl;
+	cin >> answer6;
+	switch (answer6)
+	{
+	case 1:
+	{
+		balls = balls + 1;
+		cout << "{Верно}" << endl;
+		break;
+	}
+	case 2:
+	{
+		no_balls = no_balls + 1;
+		cout << "{Неверно}" << endl;
+		break;
+	}
+	case 3:
+	{
+		no_balls = no_balls + 1;
+		cout << "{Неверно}" << endl;
+		break;
+	}
+	default:
+	{
+		no_balls = no_balls + 1;
+		cout << "{Неверно}" << endl;
+		break;
+	}
+	}
+	if (balls == 6 && no_balls == 0)
+	{
+		cout << "Вроде всё правильно!" << endl;
+	}
+	if (balls == 5 && no_balls == 1)
+	{
+		cout << "Почти, чуть-чуть не хватило!" << endl;
+	}
+	if (balls == 4 && no_balls == 2)
+	{
+		cout << "Вроде как нормально." << endl;
+	}
+	if (balls == 3 && no_balls == 3)
+	{
+		cout << "Половина, ну как-то не серьёзно." << endl;
+	}
+	if (balls == 2 && no_balls == 4)
+	{
+		cout << "Меньше половины, ну сойдёт." << endl;
+	}
+	if (balls == 1 && no_balls == 5)
+	{
+		cout << "Время подумать о жизни." << endl;
+	}
+	if (balls == 0 && no_balls == 6)
+	{
+		cout << "Ноль, нечего сказать." << endl;
+	}
+	cout << "Правильных ответов:" << balls << endl;
+	cout << "Неправильных ответов:" << no_balls << endl;
+	system("pause");
+	return 0;
+}
+
+

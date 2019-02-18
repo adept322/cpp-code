@@ -1,0 +1,54 @@
+#include <iostream>
+
+using namespace std;
+
+int* add_and_check(int* mas, int n, int var)
+{
+
+	int* buf = new int[n + 1];
+	for (int i = 0; i < n; i++)
+	{
+		buf[i] = mas[i];
+	}
+
+	buf[n] = var;
+	delete[] mas;
+	mas = buf;
+	return buf;
+}
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	int var = 0;
+	int size = 1;
+	int* array = new int[size];
+	int size1 = 0;
+	cout << "Enter new element." << endl;
+	cin >> array[0];
+	if (array[0] == 0)
+	{
+		cout << "Exit." << endl;
+		return 0;
+	}
+	while (true)
+	{
+		cout << "Enter new element." << endl;
+		cin >> var;
+		if (var == 0)
+		{
+			cout << "Exit." << endl;
+			return 0;
+		}
+		array = add_and_check(array, size, var);
+		size++;
+		cout << "Array: ";
+		for (int i = 0; i < size; i++)
+		{
+			cout << array[i] << " ";
+		}
+		cout << endl;
+	}
+}
+
+
