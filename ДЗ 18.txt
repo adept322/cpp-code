@@ -1,0 +1,24 @@
+#include <iostream>
+#include <fstream>
+#include <ctime>
+
+using namespace std;
+
+int main()
+{
+	srand(time(NULL));
+	int rand_var = 0, size = 0;
+	ofstream fout;
+	cout << "Enter quantity of variables: " << endl;
+	cin >> size;
+	fout.open("output.txt");
+	while(size != 0)
+	{
+		rand_var = rand();
+		fout << rand_var << " ";
+		size--;
+	}
+	fout.close();
+	system("pause");
+	return 0;
+}
