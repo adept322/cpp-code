@@ -27,7 +27,7 @@ int main()
 	{
 		fout << arr[i] << " ";
 	}
-	
+	fout.close();
 	delete[] arr;
 	system("pause");
 	return 0;
