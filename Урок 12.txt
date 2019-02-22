@@ -28,7 +28,7 @@ int main()
 	system("pause");
 	return 0;
 }
-
+-----------------------------------
 #include <iostream>
 #include <ctime>
 
@@ -81,7 +81,7 @@ int main()
 	system("pause");
 	return 0;
 }
-
+-----------------------------------
 #include <iostream>
 #include <ctime>
 
@@ -150,7 +150,7 @@ int main()
 	system("pause");
 	return 0;
 }
-
+-----------------------------------
 #include <iostream>
 #include <ctime>
 

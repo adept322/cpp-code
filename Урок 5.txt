@@ -20,7 +20,7 @@ void main()
 
 
 
-
+-----------------------------------
 #include <iostream>
 #include <string>
 
@@ -39,7 +39,7 @@ void main()
     }
 	system ("pause");
 }
-
+-----------------------------------
 #include <iostream>
 #include <string>
 
@@ -59,7 +59,7 @@ void main()
 	system ("pause");
 }
 
-
+-----------------------------------
 #include <iostream>
 #include <string>
 
@@ -81,7 +81,7 @@ void main()
 	system ("pause");
 }
 
-
+-----------------------------------
 #include <iostream>
 #include <string>
 
@@ -102,6 +102,7 @@ void main()
 	cout<<"Ñóììà: "<<sum<<endl;
 	system ("pause");
 }
+-----------------------------------
 #include <iostream>
 #include <string>
 
@@ -123,7 +124,7 @@ void main()
 	system ("pause");
 }
 
-
+-----------------------------------
 #include <iostream>
 #include <string>
 
@@ -144,7 +145,7 @@ void main()
 	cout<<"Ñóììà: "<<sum<<endl;
 	system ("pause");
 }
-
+-----------------------------------
 #include <iostream>
 #include <string>
 
@@ -165,7 +166,7 @@ void main()
 	cout<<"Ñóììà: "<<sum<<endl;
 	system ("pause");
 }
-
+-----------------------------------
 #include <iostream>
 #include <ctime>
 

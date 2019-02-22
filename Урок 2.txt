@@ -23,7 +23,7 @@ void main()
 	system ("pause");
 }
 
-
+-----------------------------------
 #include <iostream>
 
 using namespace std;
@@ -51,7 +51,7 @@ void main()
     system ("pause");
 }
 
-
+-----------------------------------
 #include <iostream>
 
 using namespace std;
@@ -85,7 +85,7 @@ void main()
 	 { cout<<"Большее число"<<" "<<c<<endl;}
 	}
 	     
-
+-----------------------------------
 #include <iostream>
 
 using namespace std;
@@ -120,7 +120,7 @@ void main()
 	}
 
 
-
+-----------------------------------
 
 #include <iostream>
 
@@ -155,7 +155,7 @@ void main()
     system ("pause");
 }
 
-
+-----------------------------------
 #include <iostream>
 
 using namespace std;

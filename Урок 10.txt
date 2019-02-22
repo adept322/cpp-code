@@ -40,7 +40,7 @@ int main()
 	system("pause");
 	return 0;
 }
-
+-----------------------------------
 #include <iostream>
 #include <ctime>
 #include <string>
@@ -61,7 +61,7 @@ int main()
 	system("pause");
 	return 0;
 }
-
+-----------------------------------
 #include <iostream>
 #include <ctime>
 #include <string>

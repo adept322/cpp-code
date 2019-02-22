@@ -23,6 +23,7 @@ int main()
 	system("pause");
 	return 0;
 }
+-----------------------------------
 #include <iostream>
 #include <string>
 #include <ctime>
@@ -52,6 +53,7 @@ int main()
 	system("pause");
 	return 0;
 }
+-----------------------------------
 #include <iostream>
 #include <string>
 #include <ctime>
@@ -70,6 +72,7 @@ int main()
 	system("pause");
 	return 0;
 }
+-----------------------------------
 #include <iostream>
 #include <string>
 #include <ctime>
@@ -91,6 +94,7 @@ int main()
 	system("pause");
 	return 0;
 }
+-----------------------------------
 #include <iostream>
 #include <string>
 #include <ctime>
@@ -118,6 +122,7 @@ int main()
 	system("pause");
 	return 0;
 }
+-----------------------------------
 #include <iostream>
 #include <string>
 #include <ctime>
@@ -184,6 +189,7 @@ int main()
 	system("pause");
 	return 0;
 }
+-----------------------------------
 #include <iostream>
 #include <string>
 #include <ctime>
@@ -258,6 +264,7 @@ int main()
 	system("pause");
 	return 0;
 }
+-----------------------------------
 #include <iostream>
 #include <string>
 #include <ctime>
@@ -294,6 +301,7 @@ int main()
 	system("pause");
 	return 0;
 }
+-----------------------------------
 #include <iostream>
 #include <string>
 #include <ctime>
@@ -347,6 +355,7 @@ int main()
 	system("pause");
 	return 0;
 }
+-----------------------------------
 #include <iostream>
 #include <string>
 #include <ctime>
@@ -405,6 +414,7 @@ int main()
 	system("pause");
 	return 0;
 }
+-----------------------------------
 #include <iostream>
 #include <string>
 using namespace std;

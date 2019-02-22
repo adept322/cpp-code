@@ -37,7 +37,7 @@ void main()
 
 	system("pause");
 }
-
+-----------------------------------
 #include <iostream>
 #include <ctime>
 
@@ -124,6 +124,7 @@ void main()
 	
     system("pause");
 }
+-----------------------------------
 #include <iostream>
 #include <ctime>
 
@@ -156,7 +157,7 @@ void main()
 	}
 	system("pause");
 }	
-    
+-----------------------------------  
 #include <iostream>
 #include <ctime>
 
@@ -189,6 +190,7 @@ void main()
 	}
 	system("pause");
 }
+-----------------------------------
 #include <iostream>
 
 using namespace std;
@@ -212,6 +214,7 @@ int main()
 
 	system("pause");
 }
+-----------------------------------
 #include <iostream>
 #include <ctime>
 #include <windows.h>

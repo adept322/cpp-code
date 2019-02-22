@@ -16,7 +16,7 @@ void main()
 	}	   
 	system ("pause");
 }
-
+-----------------------------------
 #include <iostream>
 #include <ctime>
 using namespace std;
@@ -33,7 +33,7 @@ void main()
 	}	   
 	system ("pause");
 }
-
+-----------------------------------
 #include <iostream>
 #include <ctime>
 using namespace std;
@@ -50,7 +50,7 @@ void main()
 	}	   
 	system ("pause");
 }
-
+-----------------------------------
 #include <iostream>
 #include <ctime>
 using namespace std;
@@ -67,7 +67,7 @@ void main()
 	}	   
 	system ("pause");
 }
-
+-----------------------------------
 #include <iostream>
 #include <ctime>
 using namespace std;
@@ -87,7 +87,7 @@ void main()
 	}	   
 	system ("pause");
 }
-
+-----------------------------------
 #include <iostream>
 #include <ctime>
 using namespace std;

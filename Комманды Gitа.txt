@@ -7,3 +7,4 @@ git status - статус
 git pull example master -принять
 got push example master- залить
 git remote add example ссылка - управление репозиториями
+git remote -v -просмотр коммитов

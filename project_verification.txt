@@ -91,7 +91,7 @@ int main()
 			cout << "@Password@: " << entered_password << endl;
 			cout << "____________________" << endl;
 			ofstream fout; //Поток
-			fout.open("C:\\Users\\Acer_Vitaliano\\Desktop\\test\\Database.txt"); //Открытие файла fout
+			fout.open("Database.txt"); //Открытие файла fout
 			fout << entered_login << "_" << number << " " << entered_password << endl; //Запись
 			fout.close(); //Закрытие файла fout
 			cout << "@Account registered@" << endl;
@@ -104,7 +104,7 @@ int main()
 			cout << "@Enter password@: " << endl;
 			cin >> verif_password;
 			ifstream fin;//Поток
-			fin.open("C:\\Users\\Acer_Vitaliano\\Desktop\\test\\Database.txt"); //Открытие файла fin
+			fin.open("Database.txt"); //Открытие файла fin
 			fin>> base_login>> base_password;
 			fin.close(); //Закрытие файла fin
 			if (verif_login == base_login && verif_password == base_password) //Проверка совпадения
