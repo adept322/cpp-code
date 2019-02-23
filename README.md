@@ -1,4 +1,4 @@
 # C-code
 code
-This is my code(C++)
+Это мой код на C++
 
