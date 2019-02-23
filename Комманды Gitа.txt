@@ -6,5 +6,5 @@ git commit -m "Коммит"
 git status - статус
 git pull example master -принять
 got push example master- залить
-git remote add example ссылка - управление репозиториями
+git remote add example ссылка - соединение с гитхабом
 git remote -v -просмотр коммитов
