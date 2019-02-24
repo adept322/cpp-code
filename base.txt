@@ -1,0 +1,4 @@
+1    audi      2012 black    sport     15000     1
+22   kamaz     1983 yellow   heavy     10000     1
+39   BMW       2002 red      light     50000     1
+2    BMW       2003 yellow   sport     20000     0

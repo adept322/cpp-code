@@ -1,0 +1,395 @@
+#include <iostream>
+#include <string>
+#include <fstream>
+#include <iomanip>
+#include <vector>
+#include <Windows.h>
+
+using namespace std;
+
+struct car
+{
+	int id;
+	string mark;
+	int age;
+	string color;
+	string category;
+	float price;
+	bool old;
+};
+
+void print_menu()
+{
+	cout << "МЕНЮ" << endl;
+	cout << "1.Распечатка" << endl;
+	cout << "2.Добавление автомобиля в базу" << endl;
+	cout << "3.Удаление автомобиля из базы признаку (id/любое)" << endl;
+	cout << "4.Информация по категориям" << endl;
+	cout << "5.Сохранение базы в файл" << endl;
+	cout << "6.Сортировка по году" << endl;
+	cout << "7.Информация по цене" << endl;
+	cout << "8.Сохранить техпаспорт автомобиля в файл (ID)" << endl;
+	cout << "9.Вычислить капитал автопарка" << endl;
+	cout << "0.Выход" << endl;
+}
+
+int main()
+{
+	setlocale(LC_ALL, "Rus");
+	int answer = -1;
+	vector<car> base;
+	ifstream fin;
+	fin.open("base.txt");
+	while (!fin.eof())
+	{
+		car buf;
+		fin >> buf.id;
+		fin >> buf.mark;
+		fin >> buf.age;
+		fin >> buf.color;
+		fin >> buf.category;
+		fin >> buf.price;
+		fin >> buf.old;
+		base.push_back(buf);
+	}
+	base.pop_back();
+	fin.close();
+	while (answer != 0)
+	{
+		system("pause");
+		system("cls");
+		print_menu();
+		cin >> answer;
+		cout << "------------------------------------------------------" << endl;
+		switch (answer)
+		{
+		case 1:
+		{
+			cout << left << setw(5) << "ID" << setw(10) << "Mark" << setw(7) << "Age" << setw(9) <<"Color" << setw(10) << "Category" << setw(10) << "Price" << setw(1) <<"Old" << endl;
+			for (int i = 0; i < base.size(); i++)
+			{
+				cout << left << setw(5) << base[i].id << setw(10) << base[i].mark << setw(7) << base[i].age << setw(9) << base[i].color << setw(10) << base[i].category << setw(10) << base[i].price << setw(1) << base[i].old << endl;
+			}
+			cout << "------------------------------------------------------" << endl;
+			break;
+		}
+		case 2:
+		{
+			car add;
+			while (true)
+			{
+				int error = 0;
+				cout << "@Введите ID@" << endl;
+				cin >> add.id;
+				for (int i = 0; i < base.size(); i++)
+				{
+					if (base[i].id == add.id)
+					{
+						error++;
+						
+					}
+				}
+				if (error == 1)
+				{
+					cout << "@ID занят@" << endl;
+					continue;
+				}
+				else
+				{
+					break;
+				}
+			}
+			cout << "@введите марку@" << endl;
+			cin >> add.mark;
+			cout << "@Введите дату покупки@" << endl;
+			cin >> add.age;
+			cout << "@Введите цвет@" << endl;
+			cin >> add.color;
+			cout << "@Введите категорию@" << endl;
+			cin >> add.category;
+			cout << "@Введите цену@" << endl;
+			cin >> add.price;
+			cout << "@Б/у?(1/0)@" << endl;
+			cin >> add.old;
+			base.push_back(add);
+			cout << "@Успешно@" << endl;
+			break;
+		}
+		case 3:
+		{
+			int var = 0;
+			cout << "1.Удаление по id" << endl;
+			cout << "2.Удаление по марке" << endl;
+			cout << "3.Удаление по дате покупки" << endl;
+			cout << "4.Удаление по цвету" << endl;
+			cout << "5.Удаление по категории" << endl;
+			cout << "6.Удаление по цене" << endl;
+			cout << "7.Удаление по (Б/у)" << endl;
+			cin >> var;
+			switch (var)
+			{
+			case 1:
+			{
+				int del_id = 0;
+				cout << "@Введите ID@" << endl;
+				cin >> del_id;
+				for (int i = 0; i < base.size(); i++)
+				{
+					if (base[i].id == del_id)
+					{
+						base.erase(base.begin() + i);
+					}
+				}
+				cout << "@Успешно@" << endl;
+				break;
+			}
+			case 2:
+			{
+				string del_mark;
+				cout << "@Введите марку@" << endl;
+				cin >> del_mark;
+				for (int i = 0; i < base.size(); i++)
+				{
+					if (base[i].mark == del_mark)
+					{
+						base.erase(base.begin() + i);
+					}
+				}
+				cout << "@Успешно@" << endl;
+				break;
+			}
+			case 3:
+			{
+				int del_date = 0;
+				cout << "@Введите дату покупки@" << endl;
+				cin >> del_date;
+				for (int i = 0; i < base.size(); i++)
+				{
+					if (base[i].age == del_date)
+					{
+						base.erase(base.begin() + i);
+					}
+				}
+				cout << "@Успешно@" << endl;
+				break;
+			}
+			case 4:
+			{
+				string del_color;
+				cout << "@Введите цвет@" << endl;
+				cin >> del_color;
+				for (int i = 0; i < base.size(); i++)
+				{
+					if (base[i].color == del_color)
+					{
+						base.erase(base.begin() + i);
+					}
+				}
+				cout << "@Успешно@" << endl;
+				break;
+			}
+			case 5:
+			{
+				string del_category;
+				cout << "@Введите категорию@" << endl;
+				cin >> del_category;
+				for (int i = 0; i < base.size(); i++)
+				{
+					if (base[i].category == del_category)
+					{
+						base.erase(base.begin() + i);
+					}
+				}
+				cout << "@Успешно@" << endl; 
+				break;
+			}
+			case 6:
+			{
+				int del_price = 0;
+				cout << "@Введите цену@" << endl;
+				cin >> del_price;
+				for (int i = 0; i < base.size(); i++)
+				{
+					if (base[i].price == del_price)
+					{
+						base.erase(base.begin() + i);
+					}
+				}
+				cout << "@Успешно@" << endl;
+				break;
+			}
+			case 7:
+			{
+				int del_old = 0;
+				cout << "@Введите (Б/у)(1/0)@" << endl;
+				cin >> del_old;
+				for (int i = 0; i < base.size(); i++)
+				{
+					if (base[i].old == del_old)
+					{
+						base.erase(base.begin() + i);
+					}
+				}
+				cout << "@Успешно@" << endl;
+				break;
+			}
+            }
+			break;
+		}
+		case 4:
+		{
+			string category;
+			cout << "@Введите категорию@" << endl;
+			cin >> category;
+			for (int i = 0; i < base.size(); i++)
+			{
+				if (base[i].category == category)
+				{
+					cout << left << setw(5) << base[i].id << setw(10) << base[i].mark << setw(5) << base[i].age << setw(9) << base[i].color << setw(10) << base[i].category << setw(10) << base[i].price << setw(1) << base[i].old << endl;
+				}
+			}
+			break;
+		}
+		case 5:
+		{
+			ofstream fout;
+			fout.open("base.txt");
+			for (int i = 0; i < base.size(); i++)
+			{
+				fout << left << setw(5) << base[i].id << setw(10) << base[i].mark << setw(5) << base[i].age << setw(9) << base[i].color << setw(10) << base[i].category << setw(10) << base[i].price << setw(1) << base[i].old << endl;
+			}
+			break;
+			fout.close();
+			cout << "@Успешно@" << endl;
+		}
+		case 6:
+		{
+			for (int j = 0; j < base.size() - 1; j++)
+			{
+				for (int i = 0; i < base.size() - 1; i++)
+				{
+					if (base[i].age > base[i + 1].age)
+					{
+						swap(base[i], base[i + 1]);
+					}
+				}
+			}
+			break;
+			cout << "@Успешно@" << endl;
+		}
+		case 7:
+		{
+			float price;
+			cout << "@Введите цену@" << endl;
+			cin >> price;
+			int answ = 0;
+			cout << "@Больше цены(1)@" << endl;
+			cout << "@Меньше цены(2)@" << endl;
+			cin >> answ;
+			for (int i = 0; i < base.size(); i++)
+			{
+				if (answ == 1)
+				{
+					if (base[i].price > price)
+					{
+						cout << left << setw(5) << base[i].id << setw(10) << base[i].mark << setw(5) << base[i].age << setw(9) << base[i].color << setw(10) << base[i].category << setw(10) << base[i].price << setw(1) << base[i].old << endl;
+					}
+				}
+				if (answ == 2)
+				{
+					if (base[i].price < price)
+					{
+						cout << left << setw(5) << base[i].id << setw(10) << base[i].mark << setw(5) << base[i].age << setw(9) << base[i].color << setw(10) << base[i].category << setw(10) << base[i].price << setw(1) << base[i].old << endl;
+					}
+				}
+			}
+			break;
+		}
+		case 8:
+		{
+			cout << "@Введите ID@" << endl;
+			int add_id = 0;
+			int ver = -1;
+			cin >> add_id;
+			for (int i = 0; i < base.size(); i++)
+			{
+				if (base[i].id == add_id)
+				{
+					ver = i;
+				}
+			}
+			if (ver == -1)
+			{
+				cout << "@Такого ID нет@" << endl;
+				break;
+			}
+			ofstream fout;
+			fout.open("passport.txt");
+			fout << "@PASSPORT AUTO@" << endl; 
+			fout << "-------------------" << endl;
+			fout << "Model  ->   " <<base[ver].mark<< endl;
+			fout << "-------------------" << endl;
+			fout << "Category  ->   " << base[ver].category << endl;
+			fout << "-------------------" << endl;
+			fout << "Year  ->   " << base[ver].age << endl;
+			fout << "-------------------" << endl;
+			fout << "Old  ->   " <<base[ver].old<< endl;
+			fout << "-------------------" << endl;
+			fout << "Color  ->   " << base[ver].color<< endl;
+			fout.close();
+			cout << "@Успешно@" << endl;
+			break;
+		}
+		case 9:
+		{
+			int money = 0;
+			for (int i = 0; i < base.size(); i++)
+			{
+				money = money + base[i].price;
+			}
+			cout << "Капитал: " << money << " (Руб)" << endl;
+			break;
+		}
+		case 0:
+		{
+			char answer1;
+			cout << "@Сохранить изменения в файл(Y/N)@" << endl;
+			cin >> answer1;
+			if (answer1 == 'Y' || answer1 == 'y')
+			{
+				ofstream fout;
+				fout.open("base.txt");
+				for (int i = 0; i < base.size(); i++)
+				{
+					fout << left << setw(5) << base[i].id << setw(10) << base[i].mark << setw(5) << base[i].age << setw(9) << base[i].color << setw(10) << base[i].category << setw(10) << base[i].price << setw(1) << base[i].old << endl;
+				}
+				fout.close();
+				cout << "@Успешно@" << endl;
+				return 0;
+			}
+			else
+			{
+				if (answer1 == 'N'|| answer1 == 'n')
+			
+				{
+					cout << "@Принято@" << endl;
+					return 0;
+				}
+				else
+				{
+					cout << "@Ошибка@" << endl;
+					return 0;
+				}
+			}	
+		}
+		default:
+		{
+			cout << "@ERROR@" << endl;
+			break;
+		}
+		}
+	}
+
+	system("pause");
+	return 0;
+}
