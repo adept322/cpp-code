@@ -16,7 +16,7 @@ struct teacher
 int main()
 {
 	teacher A;
-	A.name = "Anatolii";
+	A.name = "Anatoli";
 	A.subject = "Programming";
 	A.experience = 3;
 	A.age = 20;
