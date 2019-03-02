@@ -1,0 +1,566 @@
+#include <iostream>
+#include <string>
+#include <fstream>
+#include <iomanip>
+#include <bitset>
+
+using namespace std;
+
+int main()
+{
+	bitset<10> bt;
+	cout << left << setw(4) << "Dec" << setw(10) << "Bin" << endl;
+	for (int i = 1; i < 101; i++)
+	{
+		bt = i;
+		cout << left << setw(4) << i << setw(10) << bt << endl;
+	}
+
+
+
+
+	system("pause");
+	return 0;
+}
+------------------------
+#include <iostream>
+#include <string>
+#include <fstream>
+#include <iomanip>
+#include <bitset>
+
+using namespace std;
+
+struct point
+{
+	float x, y;
+};
+
+float Distance(point A, point B)
+{
+	return sqrt((B.y - A.y)*(B.y - A.y) + (B.x - A.x)*(B.x - A.x));
+}
+
+int quater(point A)
+{
+	
+	if (A.y > 0 && A.x > 0)
+	{
+		return 1;
+	}
+	if (A.y < 0 && A.x > 0)
+	{
+		return 2;
+	}
+	if (A.y < 0 && A.x < 0)
+	{
+		return 3;
+	}
+	if (A.y > 0 && A.x < 0)
+	{	
+		return 4;
+	}
+	return -1;
+}
+
+int main()
+{
+	float L = 0;
+	point A;
+	point B;
+	point C;
+	cout << "Enter two points:" << endl;
+	cout << "A.x";
+	cin >> A.x >> A.y;
+	cin >> B.x >> B.y;
+	
+	cout <<Distance(A,B) << endl;
+	cin >> C.x >> C.y;
+	cout << "Quater: " << quater(C) << endl;
+	system("pause");
+	return 0;
+}
+-----------------------------
+#include <iostream>
+#include <string>
+#include <fstream>
+#include <iomanip>
+#include <bitset>
+
+using namespace std;
+
+struct point
+{
+	float x, y;
+};
+
+float Distance(point A, point B)
+{
+	return sqrt((B.y - A.y)*(B.y - A.y) + (B.x - A.x)*(B.x - A.x));
+}
+
+int quater(point A)
+{
+	
+	if (A.y > 0 && A.x > 0)
+	{
+		return 1;
+	}
+	if (A.y < 0 && A.x > 0)
+	{
+		return 2;
+	}
+	if (A.y < 0 && A.x < 0)
+	{
+		return 3;
+	}
+	if (A.y > 0 && A.x < 0)
+	{	
+		return 4;
+	}
+	return -1;
+}
+
+string quater_points(point a, point b)
+{
+	string answer;
+	if (quater(a) == quater(b))
+	{
+		answer = "@Yes@";
+	}
+	else
+	{
+		answer = "@No@";
+	}
+	return answer;
+}
+
+int main()
+{
+	float L = 0;
+	point A,B,C,D,E;
+	
+	
+	
+	cout << "Enter two points:" << endl;
+	
+	cin >> A.x >> A.y;
+	cin >> B.x >> B.y;
+	
+	cout <<Distance(A,B) << endl;
+	cin >> C.x >> C.y;
+	cout << "Quater: " << quater(C) << endl;
+	cout<<"Enter two points: "<<endl;
+	cin >> D.x >> D.y;
+	cin >> E.x >> E.y;
+	cout << quater_points(D, E) << endl;
+	system("pause");
+	return 0;
+}
+-------------------------
+#include <iostream>
+#include <string>
+#include <fstream>
+#include <iomanip>
+#include <bitset>
+
+using namespace std;
+
+struct point
+{
+	float x, y;
+};
+
+float Distance(point A, point B)
+{
+	return sqrt((B.y - A.y)*(B.y - A.y) + (B.x - A.x)*(B.x - A.x));
+}
+
+int Quater(point A)
+{
+
+	if (A.y > 0 && A.x > 0)
+	{
+		return 1;
+	}
+	if (A.y < 0 && A.x > 0)
+	{
+		return 2;
+	}
+	if (A.y < 0 && A.x < 0)
+	{
+		return 3;
+	}
+	if (A.y > 0 && A.x < 0)
+	{
+		return 4;
+	}
+	return -1;
+}
+
+bool Quater_points(point a, point b)
+{
+	bool answer;
+	if (Quater(a) == Quater(b))
+	{
+		answer = 1;
+	}
+	else
+	{
+		answer = 0;
+	}
+	return answer;
+}
+
+int main()
+{
+
+	point D, E;
+	cout << "Enter two points: " << endl;
+	cin >> D.x >> D.y;
+	cin >> E.x >> E.y;
+	if (D.x == 0)
+	{
+		cout << "Error" << endl;
+		system("pause");
+		return -1;
+	}
+	if (D.y == 0)
+	{
+		cout << "Error" << endl;
+		system("pause");
+		return -1;
+	}
+	if (E.y == 0)
+	{
+		cout << "Error" << endl;
+		system("pause");
+		return -1;
+	}
+	if (E.x == 0)
+	{
+		cout << "Error" << endl;
+		system("pause");
+		return -1;
+	}
+	cout << Quater_points(D, E) << endl;
+	system("pause");
+	return 0;
+}
+--------------------------------
+#include <iostream>
+#include <string>
+#include <fstream>
+#include <iomanip>
+#include <bitset>
+#include <vector>
+
+using namespace std;
+
+struct point
+{
+	float x, y;
+};
+
+float Distance(point A, point B)
+{
+	return sqrt((B.y - A.y)*(B.y - A.y) + (B.x - A.x)*(B.x - A.x));
+}
+
+int Quater(point A)
+{
+
+	if (A.y > 0 && A.x > 0)
+	{
+		return 1;
+	}
+	if (A.y < 0 && A.x > 0)
+	{
+		return 4;
+	}
+	if (A.y < 0 && A.x < 0)
+	{
+		return 3;
+	}
+	if (A.y > 0 && A.x < 0)
+	{
+		return 2;
+	}
+	return -1;
+}
+
+bool Quater_points(point a, point b)
+{
+	bool answer;
+	if (Quater(a) == Quater(b))
+	{
+		answer = 1;
+	}
+	else
+	{
+		answer = 0;
+	}
+	return answer;
+}
+
+point middle(point a, point b)
+{
+	point point;
+	point.x = (a.x + b.x)/2;
+	point.y = (b.y + a.y)/2;
+	return point;
+}
+
+
+float* square(float a, float b, float c)
+{
+	float* answer = new float [2];
+	float Dis = (a*a) - 4*a*c;
+	float buf = (-a + sqrt(Dis)) / (2 * a);
+	answer[0] = buf;
+	 buf = (-a - sqrt(Dis)) / (2 * a);
+	answer[1] = buf;
+	return answer;
+}
+
+int main()
+{
+	int a=0, b=0, c=0;
+	cin >> a;
+	cin >> b;
+	cin >> c;
+	
+	
+	float* arr = square(a, b, c);
+	for (int i = 0; i < 2; i++)
+	{
+		cout << arr[i]<<" ";
+	}
+	delete[] arr;
+	system("pause");
+	return 0;
+}
+---------------------------------------
+#include <iostream>
+#include <string>
+#include <fstream>
+#include <iomanip>
+#include <bitset>
+#include <vector>
+
+using namespace std;
+
+struct point
+{
+	float x, y;
+};
+
+float Distance(point A, point B)
+{
+	return sqrt((B.y - A.y)*(B.y - A.y) + (B.x - A.x)*(B.x - A.x));
+}
+
+int Quater(point A)
+{
+
+	if (A.y > 0 && A.x > 0)
+	{
+		return 1;
+	}
+	if (A.y < 0 && A.x > 0)
+	{
+		return 4;
+	}
+	if (A.y < 0 && A.x < 0)
+	{
+		return 3;
+	}
+	if (A.y > 0 && A.x < 0)
+	{
+		return 2;
+	}
+	return -1;
+}
+
+bool Quater_points(point a, point b)
+{
+	bool answer;
+	if (Quater(a) == Quater(b))
+	{
+		answer = 1;
+	}
+	else
+	{
+		answer = 0;
+	}
+	return answer;
+}
+
+point middle(point a, point b)
+{
+	point point;
+	point.x = (a.x + b.x)/2;
+	point.y = (b.y + a.y)/2;
+	return point;
+}
+
+
+float* square(float a, float b, float c)
+{
+	
+	float* arr = new float[0];
+	float Dis = (b*b) - 4*a*c;
+	float buf = (-a + sqrt(Dis)) / (2 * a);
+	float buf1 = (-a - sqrt(Dis)) / (2 * a);
+	if (Dis < 0)
+	{
+		float* answer = new float[1];
+		answer[0] = -1;
+		return answer;
+	}
+	if (Dis == 0)
+	{
+		float* answer = new float[1];
+		answer[0] = buf;
+		return answer;
+	}
+	if (Dis > 0)
+	{
+		float* answer = new float[2];
+		answer[0] = buf;
+		answer[1] = buf1;
+		return answer;
+	}
+	return arr;
+}
+
+
+int main()
+{
+	int a=0, b=0, c=0;
+	cin >> a;
+	cin >> b;
+	cin >> c;
+	
+	
+	float* arr = square(a, b, c);
+	for (int i = 0; i < 2; i++)
+	{
+		cout << arr[i]<<" ";
+	}
+	delete[] arr;
+	system("pause");
+	return 0;
+}
+----------------------------------
+#include <iostream>
+#include <string>
+#include <fstream>
+#include <iomanip>
+#include <bitset>
+#include <vector>
+
+using namespace std;
+
+struct point
+{
+	float x, y;
+};
+
+float Distance(point A, point B)
+{
+	return sqrt((B.y - A.y)*(B.y - A.y) + (B.x - A.x)*(B.x - A.x));
+}
+
+int Quater(point A)
+{
+
+	if (A.y > 0 && A.x > 0)
+	{
+		return 1;
+	}
+	if (A.y < 0 && A.x > 0)
+	{
+		return 4;
+	}
+	if (A.y < 0 && A.x < 0)
+	{
+		return 3;
+	}
+	if (A.y > 0 && A.x < 0)
+	{
+		return 2;
+	}
+	return -1;
+}
+
+bool Quater_points(point a, point b)
+{
+	bool answer;
+	if (Quater(a) == Quater(b))
+	{
+		answer = 1;
+	}
+	else
+	{
+		answer = 0;
+	}
+	return answer;
+}
+
+point middle(point a, point b)
+{
+	point point;
+	point.x = (a.x + b.x)/2;
+	point.y = (b.y + a.y)/2;
+	return point;
+}
+
+
+float* square(float a, float b, float c)
+{
+	
+	float* arr = new float[0];
+	float Dis = (b*b) - 4*a*c;
+	float buf = (-a + sqrt(Dis)) / (2 * a);
+	float buf1 = (-a - sqrt(Dis)) / (2 * a);
+	if (Dis < 0)
+	{
+		float* answer = new float[1];
+		answer[0] = -1;
+		return answer;
+	}
+	if (Dis == 0)
+	{
+		float* answer = new float[1];
+		answer[0] = buf;
+		return answer;
+	}
+	if (Dis > 0)
+	{
+		float* answer = new float[2];
+		answer[0] = buf;
+		answer[1] = buf1;
+		return answer;
+	}
+	return arr;
+}
+
+
+int main()
+{
+	int a=0, b=0, c=0;
+	cin >> a;
+	cin >> b;
+	cin >> c;
+	
+	
+	float* arr = square(a, b, c);
+	for (int i = 0; i < 2; i++)
+	{
+		cout << arr[i]<<" ";
+	}
+	delete[] arr;
+	system("pause");
+	return 0;
+}
