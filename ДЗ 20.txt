@@ -1,0 +1,76 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+struct woman
+{
+	string name;
+	int age;
+	bool married;
+};
+
+struct child
+{
+	string name;
+	int birth;
+};
+
+child birth(woman buf)
+{
+	child buf1;
+	if (buf.age > 17 && buf.married == 1)
+	{
+		
+		cout << "@Enter child name@: " << endl;
+		cin >> buf1.name;
+		cout << "@Enter child date of birth@: " << endl;
+		cin >> buf1.birth;
+		return buf1;
+	}
+	else
+	{
+		buf1.name = "error";
+		buf1.birth = 0;
+		return buf1;
+	}
+}
+
+void compliment(woman buf)
+{
+	cout << buf.name << " you are so perfect for yours " << buf.age << endl;
+}
+
+int main()
+{
+	woman buf;
+	cout << "@Enter name@: " << endl;
+	cin >> buf.name;
+	cout << "@Enter age@: " << endl;
+	cin >> buf.age;
+	cout << "@Enter married(1|0)@: " << endl;
+	cin >> buf.married;
+	/*
+	Демонстрация первой функции!
+	child var = birth(buf);
+	if (var.name == "error")
+	{
+		cout << "@Error@" << endl;
+		system("pause");
+		return 0;
+	}
+	cout << "@CHILD@" << endl;
+	cout << "@Name@: " << var.birth << "@Date of birth@: " << var.birth << endl;
+	*/
+	
+	
+	/*
+	Демонстрация второй функции!
+	compliment(buf);
+	
+	*/
+	
+	
+	system("pause");
+	return 0;
+}
