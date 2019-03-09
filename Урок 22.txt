@@ -1,0 +1,629 @@
+Методы и классы
+privat: с маленькой буквы
+public: с большой 
+protected:
+Название Classа с большой буквы
+Инкапсуляция - сокрытие 
+--------------------------------------
+#include <iostream>
+#include <string>
+#include <vector>
+
+using namespace std;
+
+class Person
+{
+private:
+	int age;
+public:
+	string name;
+	bool married;
+	Person()
+	{
+		name = "";
+		age = 0;
+		married = false;
+	}
+	Person(string n, int a, bool m)
+	{
+		name = n;
+		age = a;
+		married = m;
+
+	}
+	void Show()
+	{
+		cout << name << " " << age << " " << married << " " << endl;
+	}
+	void Mary()
+	{
+		married = true;
+	}
+	int GetAge()
+	{
+		return age;
+	}
+	void BirthDay()
+	{
+		age++;
+	}
+	void SetAge(int a)
+	{
+		if (a > 0)
+		{
+			age = a;
+		}
+		else
+		{
+			cout << "Error" << endl;
+		}
+	}
+
+};
+
+int main()
+{
+	
+	Person human = Person("Andrew",20,0);
+	
+	
+	
+	human.Show();
+	cout << human.GetAge() << endl;
+	system("pause");
+	return 0;
+}
+-----------------------------------------------
+#include <iostream>
+#include <string>
+#include <vector>
+#include <iomanip>
+
+using namespace std;
+
+class  Worker
+{
+private:
+	string name;
+	float salary;
+	int expirience;
+	int age;
+	float money;
+public:
+	Worker()
+	{
+		name = "";
+		salary = 0;
+		expirience = 0;
+		age = 0;
+		money = 0;
+	}
+	Worker(string n, float s, int e, int a, float m)
+	{
+		name = n;
+		salary = s;
+		expirience = e;
+		age = a;
+		money = m;
+	}
+	void Show()
+	{
+		cout << name << " " << salary << " " << expirience << " " << money << endl;
+	}
+	void GetSalary()
+	{
+		cout << salary;
+	}
+	void SetSalary(float s)
+	{
+		if (s > 0)
+		{
+		salary = s;
+		}
+		else
+		{
+			cout << "Error" << endl;
+		}
+	}
+	void GetExpirience()
+	{
+		cout << expirience << endl;
+	}
+	void SetExpirience(int a, int e)
+	{
+		if (a - e > 17)
+		{
+			expirience = e;
+		}
+		else
+		{
+			cout << "Error" << endl;
+		}
+	}
+	void GetName()
+	{
+		cout << name << endl;
+
+	}
+	void GetMoney()
+	{
+		cout << money << endl;
+	}
+	void GetAge()
+	{
+		cout << age << endl;
+	}
+};
+
+int main()
+{
+	Worker policeman("Daniel", 60000,3, 25, 10);
+	policeman.Show();
+
+	
+	system("pause");
+	return 0;
+}
+------------------
+#include <iostream>
+#include <string>
+#include <vector>
+#include <iomanip>
+
+using namespace std;
+
+class  Worker
+{
+private:
+	string name;
+	float salary;
+	int expirience;
+	int age;
+	float money;
+public:
+	Worker()
+	{
+		name = "";
+		salary = 0;
+		expirience = 0;
+		age = 0;
+		money = 0;
+	}
+	Worker(string n, float s, int e, int a, float m)
+	{
+		name = n;
+		salary = s;
+		expirience = e;
+		age = a;
+		money = m;
+	}
+	void Show()
+	{
+		cout << name << " " << salary << " " << expirience << " " << money << endl;
+	}
+	float GetSalary()
+	{
+		return salary;
+	}
+	void SetSalary(float s)
+	{
+		if (s > 0)
+		{
+		salary = s;
+		}
+		else
+		{
+			cout << "Error" << endl;
+		}
+		
+	}
+	int GetExpirience()
+	{
+		return expirience;
+	}
+	void SetExpirience(int a, int e)
+	{
+		if (a - e > 17)
+		{
+			expirience = e;
+		}
+		else
+		{
+			cout << "Error" << endl;
+		}
+	}
+	string GetName()
+	{
+		return name;
+	}
+	float GetMoney()
+	{
+		return money;
+	}
+	int  GetAge()
+	{
+		return age;
+	}
+	void EarnMoney()
+	{
+		money = money + salary;
+	}
+};
+
+int main()
+{
+	vector<Worker> Wk;
+	int size = 0;
+	cin >> size;
+	for (int i = 0; i < size; i++)
+	{
+		string name;
+		float salary;
+		int expirience;
+		int age;
+		float money;
+		cout << i + 1 << "-Worker" << endl;
+		cout << "Enter name: " << endl;
+		cin >> name;
+		cout << "Enter salary: " << endl;
+		cin >> salary;
+		cout << "Enter expirience: " << endl;
+		cin >> expirience;
+		cout << "Enter age: " << endl;
+		cin >> age;
+		cout << "Enter money: " << endl;
+		cin >> money;
+		Worker buf = Worker(name, salary, expirience, age, money);
+		Wk.push_back(buf);
+	}
+	for (int i = 0; i < size; i++)
+	{
+		Wk[i].Show();
+	}
+	float CurrentSalary = 0;
+	float buf1 = 0;
+	for (int i = 0; i < size; i++)
+	{
+		buf1 = Wk[i].GetSalary();
+		CurrentSalary = CurrentSalary + buf1;
+	}
+	CurrentSalary = CurrentSalary / size;
+	cout << CurrentSalary << endl;
+	float buf2 = 0;
+	for (int i = 0; i < size; i++)
+	{
+		buf2 = Wk[i].GetSalary();
+		if (Wk[i].GetSalary() < CurrentSalary)
+		{
+			Wk[i].SetSalary(buf2 + 2000);
+		}
+	}
+	for (int i = 0; i < size; i++)
+	{
+		Wk[i].Show();
+	}
+	system("pause");
+	return 0;
+}
+----------------------------------------
+#include <iostream>
+#include <string>
+#include <vector>
+#include <iomanip>
+
+using namespace std;
+
+class  Worker
+{
+private:
+	string name;
+	float salary;
+	int expirience;
+	int age;
+	float money;
+public:
+	Worker()
+	{
+		name = "";
+		salary = 0;
+		expirience = 0;
+		age = 0;
+		money = 0;
+	}
+	Worker(string n, float s, int e, int a, float m)
+	{
+		name = n;
+		salary = s;
+		expirience = e;
+		age = a;
+		money = m;
+	}
+	void Show()
+	{
+		cout << name << " " << salary << " " << expirience << " " << money << endl;
+	}
+	float GetSalary()
+	{
+		return salary;
+	}
+	void SetSalary(float s)
+	{
+		if (s > 0)
+		{
+		salary = s;
+		}
+		else
+		{
+			cout << "Error" << endl;
+		}
+		
+	}
+	int GetExpirience()
+	{
+		return expirience;
+	}
+	void SetExpirience(int a, int e)
+	{
+		if (a - e > 17)
+		{
+			expirience = e;
+		}
+		else
+		{
+			cout << "Error" << endl;
+		}
+	}
+	string GetName()
+	{
+		return name;
+	}
+	float GetMoney()
+	{
+		return money;
+	}
+	int  GetAge()
+	{
+		return age;
+	}
+	void EarnMoney()
+	{
+		money = money + salary;
+	}
+};
+
+int main()
+{
+	vector<Worker> Wk;
+	int size = 0;
+	cin >> size;
+	for (int i = 0; i < size; i++)
+	{
+		string name;
+		float salary;
+		int expirience;
+		int age;
+		float money;
+		cout << i + 1 << "-Worker" << endl;
+		cout << "Enter name: " << endl;
+		cin >> name;
+		cout << "Enter salary: " << endl;
+		cin >> salary;
+		cout << "Enter expirience: " << endl;
+		cin >> expirience;
+		cout << "Enter age: " << endl;
+		cin >> age;
+		cout << "Enter money: " << endl;
+		cin >> money;
+		Worker buf = Worker(name, salary, expirience, age, money);
+		Wk.push_back(buf);
+	}
+	for (int i = 0; i < size; i++)
+	{
+		Wk[i].Show();
+	}
+	float CurrentSalary = 0;
+	float buf1 = 0;
+	for (int i = 0; i < size; i++)
+	{
+		buf1 = Wk[i].GetSalary();
+		CurrentSalary = CurrentSalary + buf1;
+	}
+	CurrentSalary = CurrentSalary / size;
+	cout << CurrentSalary << endl;
+	float buf2 = 0;
+	for (int i = 0; i < size; i++)
+	{
+		if (Wk[i].GetSalary() < CurrentSalary)
+		{
+			Wk[i].SetSalary(Wk[i].GetSalary() + 2000);
+		}
+	}
+	for (int i = 0; i < size; i++)
+	{
+		Wk[i].Show();
+	}
+	system("pause");
+	return 0;
+}
+-------------------------
+#include <iostream>
+#include <string>
+#include <vector>
+#include <iomanip>
+
+using namespace std;
+
+class Worker
+{
+protected:
+	string name;
+	float salary;
+	int expirience;
+	int age;
+	float money;
+public:
+	Worker()
+	{
+		name = "";
+		salary = 0;
+		expirience = 0;
+		age = 0;
+		money = 0;
+	}
+	Worker(string n, float s, int e, int a, float m)
+	{
+		name = n;
+		salary = s;
+		expirience = e;
+		age = a;
+		money = m;
+	}
+	void Show()
+	{
+		cout << name << " " << salary << " " << expirience << " " <<age<<" "<< money << endl;
+	}
+	float GetSalary()
+	{
+		return salary;
+	}
+	void SetSalary(float s)
+	{
+		if (s > 0)
+		{
+		salary = s;
+		}
+		else
+		{
+			cout << "Error" << endl;
+		}
+		
+	}
+	int GetExpirience()
+	{
+		return expirience;
+	}
+	void SetExpirience(int a, int e)
+	{
+		if (a - e > 17)
+		{
+			expirience = e;
+		}
+		else
+		{
+			cout << "Error" << endl;
+		}
+	}
+	string GetName()
+	{
+		return name;
+	}
+	float GetMoney()
+	{
+		return money;
+	}
+	int  GetAge()
+	{
+		return age;
+	}
+	void EarnMoney()
+	{
+		money = money + salary;
+	}
+};
+
+class Director : public Worker
+{
+private:
+	string secretary;
+public:
+	Director()
+	{
+		name = "";
+		salary = 0;
+		expirience = 0;
+		age = 0;
+		money = 0;
+		secretary = "";
+	}
+	Director(string n, float s, int e, int a, float m,string S)
+	{
+		name = n;
+		salary = s;
+		expirience = e;
+		age = a;
+		money = m;
+		secretary = S;
+	}
+	void Chill()
+	{
+		cout << "Chill.....:)" << endl;
+	}
+	void Work()
+	{
+		cout << "Work.....:(" << endl;
+	}
+	void Show()
+	{
+		cout << name << " " << salary << " " << expirience << " " << age << " " << money <<secretary<< endl;
+	}
+};
+
+int main()
+{
+	vector<Director> Dr;
+	vector<string> UniqueName;
+	int size = 0;
+	cin >> size;
+	for (int i = 0; i < size; i++)
+	{
+		string name;
+		float salary;
+		int expirience;
+		int age;
+		float money;
+		string secretary;
+		cout << i + 1 << "-Worker" << endl;
+		cout << "Enter name: " << endl;
+		cin >> name;
+		cout << "Enter salary: " << endl;
+		cin >> salary;
+		cout << "Enter expirience: " << endl;
+		cin >> expirience;
+		cout << "Enter age: " << endl;
+		cin >> age;
+		cout << "Enter money: " << endl;
+		cin >> money;
+		cout << "Enter secretary: " << endl;
+		cin >> secretary;
+		Director buf = Director(name, salary, expirience, age, money,secretary);
+		Dr.push_back(buf);
+	}
+	string BufName;
+	int repeat = 0;
+	for (int i = 0; i < size; i++)
+	{
+		for (int i = 0; i < Dr.size(); i++)
+		{
+			if (Dr[i].GetName() == UniqueName[i])
+			{
+				repeat++;
+			}
+		}
+		if (repeat == 0)
+		{
+			UniqueName.push_back(Dr[i].GetName());
+		}
+	}
+	for (int i = 0; i < UniqueName.size(); i++)
+	{
+		cout << UniqueName[i] << endl;
+	}
+	system("pause");
+	return 0;
+}
+
+
+
+
+
+
