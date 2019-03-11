@@ -1,0 +1,101 @@
+#include <iostream>
+#include <iomanip>
+#include <string>
+
+using namespace std;                
+
+class Cake
+{
+private:
+	string filling;
+	int weight;
+	bool cooked;
+	bool aviable;
+public:
+	Cake()
+	{
+		filling = " ";
+		weight = 0;
+		cooked = false;
+		aviable = false;
+	}
+	Cake(string fillingC, int weightC)
+	{
+		filling = fillingC;
+		weight = weightC;
+		cooked = false;
+		aviable = true;
+	}
+	void CookCake()
+	{
+		if (cooked == false && aviable == true)
+		{
+		cooked = true;
+		cout << "@Cake is cooked@" << endl;
+		}
+		else
+		{
+			if (aviable == false)
+			{
+				cout << "@Cake is not available@" << endl;
+			}
+			else
+			{
+				cout << "@Cake already cooked@" << endl;
+			}
+		}
+	}
+	void EatCake()
+	{
+		if (cooked == true && aviable == true)
+		{
+			aviable = false;
+			cout << "@Cake is eaten@" << endl;
+		}
+		else
+		{
+			if (cooked == false)
+			{
+				cout << "@Cake is not cooked@" << endl;
+				
+			}
+			if (aviable == false)
+			{
+
+				cout << "@Cake is not available@" << endl;
+			}
+			cout << "@Cake cannot be eaten@" << endl;
+		}
+
+	}
+	void Show()
+	{
+		cout << "@Filling: " << setw(10) << filling << " | " << "Weight(kg): " << setw(3) << weight << " | " << "Cooked: " << cooked << " | " << "Aviable: " << aviable << " |" << endl;
+	}
+	string GetFilling()
+	{
+		return filling;
+	}
+	int GetWeight()
+	{
+		return weight;
+	}
+	bool GetCooked()
+	{
+		return cooked;
+	}
+	bool GetAviable()
+	{
+		return aviable;
+	}
+};
+
+int main()
+{
+
+
+
+
+	system("pause");
+	return 0;
+}
