@@ -1,0 +1,473 @@
+#include <iostream>
+#include <conio.h>
+#include <Windows.h>
+
+using namespace std;
+
+void main()
+{
+	int labirint[20][20] =
+	{
+		{1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+		{1,0,1,1,0,0,0,0,1,1,1,1,1,1,1,0,0,0,1,1},
+		{1,0,0,1,0,1,1,0,1,1,0,0,4,0,1,0,1,0,1,1},
+		{1,1,4,0,0,1,1,0,1,1,0,1,1,0,0,0,1,0,1,1},
+		{1,1,1,1,1,1,1,0,1,0,0,0,1,1,1,1,1,4,1,1},
+		{1,1,0,0,0,0,0,0,1,4,1,0,1,1,1,1,1,1,1,1},
+		{1,1,0,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1},
+		{1,1,0,4,0,1,0,0,0,1,1,0,1,1,1,1,1,1,1,1},
+		{1,1,1,1,0,0,0,1,0,1,0,0,1,1,1,1,1,1,1,1},
+		{1,1,1,1,1,1,1,1,0,1,0,1,1,1,1,1,1,1,1,1},
+		{1,1,1,1,1,1,1,1,0,1,0,1,1,1,1,1,1,1,1,1},
+		{1,1,1,1,1,1,1,1,0,0,0,1,1,1,1,1,1,1,1,1},
+		{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+		{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+		{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+		{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+		{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+		{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+		{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+		{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+	};
+	int per_i = 0;
+	int per_j = 1;
+	int points = 0;
+	int p = 128;
+	int k = 0;
+	while (true)
+	{
+		k = _getch();
+		if (k == 112)
+		{
+			system("cls");
+			cout << k << " " << static_cast<char>(k);
+		}
+	}
+	/*
+	while (true)
+	{
+		system("cls");
+		for (int i = 0; i < 20; i++)
+		{
+			for (int j = 0; j < 20; j++)
+			{
+				if (labirint[i][j] == 1)
+				{
+					cout << static_cast<char>(178);
+					cout << static_cast<char>(178);
+				}
+				if (labirint[i][j] == 2)
+				{
+					cout << static_cast<char>(p);
+					cout << static_cast<char>(p);
+				}
+				if (labirint[i][j] == 3)
+				{
+					cout << static_cast<char>(157);
+					cout << static_cast<char>(157);
+				}
+				if (labirint[i][j] == 4)
+				{
+					cout << static_cast<char>(36);
+					cout << static_cast<char>(36);
+				}
+				if (labirint[i][j] == 0)
+				{
+					cout << "  ";
+				}
+			}
+			cout << endl;
+		}
+		cout << "Points: " << points << endl;
+		int key = _getch();
+		labirint[per_i][per_j] = 0;
+		if (key == 72 || key == 150 || key == 230)
+		{
+			per_i = per_i - 1;
+		}
+		if (key == 80 || key == 155 || key == 235)
+		{
+			per_i = per_i + 1;
+		}
+		if (key == 77 || key == 130 || key == 262)
+		{
+			per_j = per_j + 1;
+		}
+		if (key == 75 || key == 148 || key == 235)
+		{
+			per_j = per_j - 1;
+		}
+		if (key = 128)
+		{
+			
+		}
+		if (labirint[per_i][per_j] == 1)
+		{
+			cout << "@GAME OVER@" << endl;
+			break;
+		}
+		if (labirint[per_i][per_j] == 4)
+		{
+			points++;
+		}
+		if (labirint[per_i][per_j] == 3)
+		{
+			cout << "@VICTORY@" << endl;
+			break;
+		}
+		labirint[per_i][per_j] = 2;
+		
+	}
+	cout << "Score: " << points << endl;
+	*/
+	system("pause");
+}
+----------------------------------------------------
+#include <iostream>
+#include <conio.h>
+#include <Windows.h>
+
+using namespace std;
+
+void main()
+{
+	int labirint[10][10] =
+	{
+		{1,1,1,1,1,1,1,1,1,1},
+		{1,1,1,1,1,1,1,1,1,1},
+		{1,1,1,1,1,1,1,1,1,1},
+		{1,1,1,1,1,1,1,1,1,1},
+		{1,1,1,1,1,1,1,1,1,1},
+		{1,1,1,1,1,1,1,1,1,1},
+		{1,1,1,1,1,1,1,1,1,1},
+		{1,1,1,1,1,1,1,1,1,1},
+		{1,1,1,1,1,1,1,1,1,1},
+		{1,1,1,1,1,1,1,1,1,1},
+	};
+	int key;
+	int p = 112;
+	int per_i = 0, per_j = 0;
+	while (true)
+	{
+		system("cls");
+		for (int i = 0; i < 10; i++)
+		{
+			for (int j = 0; j < 10; j++)
+			{
+				cout << static_cast<char>(labirint[i][j]);
+				cout << static_cast<char>(labirint[i][j]);
+			}
+			cout << endl;
+		}
+		key = _getch();
+		if (key == 112)
+		{
+			system("cls");
+			p++;
+		}
+		if (key == 111)
+		{
+			system("cls");
+			p--;
+		}
+		if (key == 72 || key == 150 || key == 230)
+		{
+			per_i = per_i - 1;
+		}
+		if (key == 80 || key == 155 || key == 235)
+		{
+			per_i = per_i + 1;
+		}
+		if (key == 77 || key == 130 || key == 262)
+		{
+			per_j = per_j + 1;
+		}
+		if (key == 75 || key == 148 || key == 235)
+		{
+			per_j = per_j - 1;
+		}
+		labirint[per_i][per_j] = static_cast<char>(p);
+	}
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	/*
+	while (true)
+	{
+		system("cls");
+		for (int i = 0; i < 20; i++)
+		{
+			for (int j = 0; j < 20; j++)
+			{
+				if (labirint[i][j] == 1)
+				{
+					cout << static_cast<char>(178);
+					cout << static_cast<char>(178);
+				}
+				if (labirint[i][j] == 2)
+				{
+					cout << static_cast<char>(p);
+					cout << static_cast<char>(p);
+				}
+				if (labirint[i][j] == 3)
+				{
+					cout << static_cast<char>(157);
+					cout << static_cast<char>(157);
+				}
+				if (labirint[i][j] == 4)
+				{
+					cout << static_cast<char>(36);
+					cout << static_cast<char>(36);
+				}
+				if (labirint[i][j] == 0)
+				{
+					cout << "  ";
+				}
+			}
+			cout << endl;
+		}
+		cout << "Points: " << points << endl;
+		int key = _getch();
+		labirint[per_i][per_j] = 0;
+		if (key == 72 || key == 150 || key == 230)
+		{
+			per_i = per_i - 1;
+		}
+		if (key == 80 || key == 155 || key == 235)
+		{
+			per_i = per_i + 1;
+		}
+		if (key == 77 || key == 130 || key == 262)
+		{
+			per_j = per_j + 1;
+		}
+		if (key == 75 || key == 148 || key == 235)
+		{
+			per_j = per_j - 1;
+		}
+		if (key = 128)
+		{
+			
+		}
+		if (labirint[per_i][per_j] == 1)
+		{
+			cout << "@GAME OVER@" << endl;
+			break;
+		}
+		if (labirint[per_i][per_j] == 4)
+		{
+			points++;
+		}
+		if (labirint[per_i][per_j] == 3)
+		{
+			cout << "@VICTORY@" << endl;
+			break;
+		}
+		labirint[per_i][per_j] = 2;
+		
+	}
+	cout << "Score: " << points << endl;
+	*/
+	system("pause");
+}
+----------------
+#include <iostream>
+#include <conio.h>
+#include <Windows.h>
+#include <fstream>
+
+using namespace std;
+
+int main()
+{
+	int labirint[10][10] =
+	{
+		{1,1,1,1,1,1,1,1,1,1},
+		{1,1,1,1,1,1,1,1,1,1},
+		{1,1,1,1,1,1,1,1,1,1},
+		{1,1,1,1,1,1,1,1,1,1},
+		{1,1,1,1,1,1,1,1,1,1},
+		{1,1,1,1,1,1,1,1,1,1},
+		{1,1,1,1,1,1,1,1,1,1},
+		{1,1,1,1,1,1,1,1,1,1},
+		{1,1,1,1,1,1,1,1,1,1},
+		{1,1,1,1,1,1,1,1,1,1},
+	};
+	int key;
+	int p = 112;
+	int per_i = 0, per_j = 0;
+	while (true)
+	{
+		system("cls");
+		for (int i = 0; i < 10; i++)
+		{
+			for (int j = 0; j < 10; j++)
+			{
+				cout << static_cast<char>(labirint[i][j]);
+				cout << static_cast<char>(labirint[i][j]);
+			}
+			cout << endl;
+		}
+		key = _getch();
+		//cout << key;
+		if (key == 112)
+		{
+			system("cls");
+			p++;
+		}
+		if (key == 111)
+		{
+			system("cls");
+			p--;
+		}
+		if (key == 72 || key == 150 || key == 230)
+		{
+			per_i = per_i - 1;
+		}
+		if (key == 80 || key == 155 || key == 235)
+		{
+			per_i = per_i + 1;
+		}
+		if (key == 77 || key == 130 || key == 262)
+		{
+			per_j = per_j + 1;
+		}
+		if (key == 75 || key == 148 || key == 235)
+		{
+			per_j = per_j - 1;
+		}
+		if (key == 226 || key==110)
+		{
+			ofstream fout;
+			fout.open("LEVEL.txt");
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j= 0; j < 10; i++)
+				{
+					fout  << " ";
+				}
+				fout << endl;
+			}
+			fout.close();
+			cout << "@Successfully@" << endl;
+		}
+		labirint[per_i][per_j] = static_cast<char>(p);
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	/*
+	while (true)
+	{
+		system("cls");
+		for (int i = 0; i < 20; i++)
+		{
+			for (int j = 0; j < 20; j++)
+			{
+				if (labirint[i][j] == 1)
+				{
+					cout << static_cast<char>(178);
+					cout << static_cast<char>(178);
+				}
+				if (labirint[i][j] == 2)
+				{
+					cout << static_cast<char>(p);
+					cout << static_cast<char>(p);
+				}
+				if (labirint[i][j] == 3)
+				{
+					cout << static_cast<char>(157);
+					cout << static_cast<char>(157);
+				}
+				if (labirint[i][j] == 4)
+				{
+					cout << static_cast<char>(36);
+					cout << static_cast<char>(36);
+				}
+				if (labirint[i][j] == 0)
+				{
+					cout << "  ";
+				}
+			}
+			cout << endl;
+		}
+		cout << "Points: " << points << endl;
+		int key = _getch();
+		labirint[per_i][per_j] = 0;
+		if (key == 72 || key == 150 || key == 230)
+		{
+			per_i = per_i - 1;
+		}
+		if (key == 80 || key == 155 || key == 235)
+		{
+			per_i = per_i + 1;
+		}
+		if (key == 77 || key == 130 || key == 262)
+		{
+			per_j = per_j + 1;
+		}
+		if (key == 75 || key == 148 || key == 235)
+		{
+			per_j = per_j - 1;
+		}
+		if (key = 128)
+		{
+
+		}
+		if (labirint[per_i][per_j] == 1)
+		{
+			cout << "@GAME OVER@" << endl;
+			break;
+		}
+		if (labirint[per_i][per_j] == 4)
+		{
+			points++;
+		}
+		if (labirint[per_i][per_j] == 3)
+		{
+			cout << "@VICTORY@" << endl;
+			break;
+		}
+		labirint[per_i][per_j] = 2;
+
+	}
+	cout << "Score: " << points << endl;
+	*/
+	system("pause");
+}
