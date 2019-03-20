@@ -1,0 +1,286 @@
+#include <iostream>
+#include <ctime>
+#include <string>
+#include <Windows.h>
+using namespace std;
+
+class Cat
+{
+private:
+	string nickname;
+	string color;
+	string state;
+	int age;
+	int mood;
+	int health;
+	bool alive;
+public:
+	Cat()
+	{
+		nickname = " ";
+		color = " ";
+		state = " ";
+		age = 0;
+		mood = 0;
+		health = 0;
+		alive = false;
+	}
+	Cat(string nick, string col)
+	{
+		nickname = nick;
+		color = col;
+		state = "sit";
+		age =1;
+		mood = 10;
+		health = 10;
+		alive = true;
+	}
+	string GetNickname()
+	{
+		return nickname;
+	}
+	string GetColor()
+	{
+		return color;
+	}
+	string GetState()
+	{
+		return state;
+	}
+	int GetAge()
+	{
+		return age;
+	}
+	int GetMood()
+	{
+		return mood;
+	}
+	int GetHealth()
+	{
+		return health;
+	}
+	bool GetAlive()
+	{
+		return alive;
+	}
+	void Show()
+		{
+		cout << endl;
+		cout << "<Имя: " << nickname << endl;
+		cout << "<Окрас: " << color << endl;
+		cout << "<Состояние: " << state << endl;
+		cout << "<Возраст: " << age <<" год"<<endl;
+		cout <<"<Готов вкалывать: " << alive << endl;
+			cout << "<Здоровье: {";
+			for (int i = 0; i < health; i++)
+			{
+				cout << "#";
+			}
+			for(int i = 0; i < (10 - health); i++)
+			{
+				cout << "_";
+			}
+			cout << "}" << endl;
+			cout << "<Настроение: {";
+			for (int i = 0; i < mood; i++)
+			{
+				cout << "#";
+			}
+			for (int i = 0; i < (10 - mood); i++)
+			{
+				cout << "_";
+			}
+			cout << "}" << endl;
+		}
+	void Play()
+		{
+			if (state == "sit")
+			{
+				int RandMood = rand() % 3 + 1;
+				mood = mood + RandMood;
+				if (mood > 10)
+				{
+					mood = 10;
+				}
+				cout << "@Вы поиграли с котом@" << endl;
+			}
+			else
+			{
+				cout << "@Кот не сидит@" << endl;
+			}
+		}
+	void Feed()
+		{
+			if (state == "sit")
+			{
+				int RandHealth = rand() % 3 + 1;
+				health = health + RandHealth;
+				if (health > 10)
+				{
+					health = 10;
+				}
+			}
+			cout << "@Кот покушал@" << endl;
+		}
+	void Wake()
+		{
+			if (state == "sleep" )
+			{
+				state = "sit";
+				cout << "@Кот проснулся@" << endl;
+			}
+			else
+			{
+				if (state == "walk")
+				{
+					cout << "@Кот гуляет@" << endl;
+				}
+				else
+				{
+					cout << "@Кот не спал@" << endl;
+				}
+			}
+		}
+	void Throw()
+		{
+			if (state == "sit" || state == "sleep")
+			{
+				state = "walk";
+			}
+			cout << "@Кот гуляет@" << endl;
+		}
+	void RandomEvent()
+	{
+		age++;
+		int RandEvent = rand() % 3;
+		if (RandEvent == 0)
+		{
+			health = health - rand() % 6;
+			if (health <= 0)
+			{
+				alive = false;
+			}
+			if (state == "sit")
+			{
+				state = "walk";
+			}
+			cout << "@Коту стало плохо@" << endl;
+		}
+		if (RandEvent == 1)
+		{
+			mood = mood - rand() % 4;
+			if (mood <= 0)
+			{
+				alive = false;
+			}
+			if (state == "sit")
+			{
+				state = "sleep";
+			}
+			cout << "@Коту стало грустно, и он уснул@" << endl;
+		}
+		if (RandEvent == 2)
+		{
+			if (state == "walk")
+			{
+				mood = mood + rand() % 5;
+				if (mood > 10)
+				{
+					mood = 10;
+				}
+			}
+			cout << "@Коту стало веселее@" << endl;
+		}
+	}
+	void Seat()
+	{
+		if (state != "sit")
+		{
+			state = "sit";
+		}
+		else
+		{
+			cout << "@Кот уже сидит@" << endl;
+		}
+	}
+};
+
+void menu()
+{
+	cout << "<1.Поиграть с котом>" << endl;
+	cout << "<2.Покормить кота>" << endl;
+	cout << "<3.Разбудить кота>" << endl;
+	cout << "<4.Погулять с котом>" << endl;
+	cout << "<5.Посадить кота>" << endl;
+}
+
+int main()
+{
+	srand(time(NULL));
+	setlocale(LC_ALL, "Russian");
+	string name, color;
+	int random = 0;
+	int answer = 0,count = 0;
+	cout << "@Создать кота@" << endl;
+	cout << "@Введите имя кота@" << endl;
+	cin >> name;
+	cout << "@Введите окрас кота@" << endl;
+	cin >> color;
+	Cat Tamagotchi = Cat(name, color);
+	random = rand() % 5;
+	while (true)
+	{
+		system("cls");
+		menu();
+		if (Tamagotchi.GetHealth() <= 0|| Tamagotchi.GetMood() <= 0 || Tamagotchi.GetAge() == 100)
+		{
+			cout << "@Игра окончена@" << endl;
+			break;
+		}
+		cout << "@Характеристики кота@" << endl;
+		Tamagotchi.Show();
+		cin >> answer;
+		switch (answer)
+		{
+		case 1:
+		{
+			Tamagotchi.Play();
+			break;
+		}
+		case 2:
+		{
+			Tamagotchi.Feed();
+			break;
+		}
+		case 3:
+		{
+			Tamagotchi.Wake();
+			break;
+		}
+		case 4:
+		{
+			Tamagotchi.Throw();
+			break;
+		}
+		case 5:
+		{
+			Tamagotchi.Seat();
+			break;
+		}
+		default:
+		{
+			cout << "@Нет такой команды@" << endl;
+		}
+		}
+		if (random == count)
+		{
+			Tamagotchi.RandomEvent();
+			random = rand() % 5;
+			count = -1;
+		}
+		system("pause");
+		count++;
+	}
+	system("pause");
+	return 0;
+}
