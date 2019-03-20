@@ -23,7 +23,7 @@ public:
 		age = 0;
 		mood = 0;
 		health = 0;
-		alive = false;
+		alive = true;
 	}
 	Cat(string nick, string col)
 	{
