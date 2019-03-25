@@ -1,0 +1,38 @@
+﻿  Source.cpp
+c:\users\pupil\source\repos\project60\project60\labirint.h(102): error C2061: синтаксическая ошибка: идентификатор "string"
+c:\users\pupil\source\repos\project60\project60\labirint.h(38): warning C4553: "==": результат выражения не используется; вы хотели использовать "="?
+c:\users\pupil\source\repos\project60\project60\labirint.h(45): error C2065: ifstream: необъявленный идентификатор
+c:\users\pupil\source\repos\project60\project60\labirint.h(45): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "fin"
+c:\users\pupil\source\repos\project60\project60\labirint.h(45): error C2065: fin: необъявленный идентификатор
+c:\users\pupil\source\repos\project60\project60\labirint.h(46): error C2065: fin: необъявленный идентификатор
+c:\users\pupil\source\repos\project60\project60\labirint.h(47): error C2065: fin: необъявленный идентификатор
+c:\users\pupil\source\repos\project60\project60\labirint.h(55): error C2065: fin: необъявленный идентификатор
+c:\users\pupil\source\repos\project60\project60\labirint.h(59): error C2065: fin: необъявленный идентификатор
+c:\users\pupil\source\repos\project60\project60\labirint.h(64): error C2534: Labirint: конструктор не может возвращать значение
+  c:\users\pupil\source\repos\project60\project60\labirint.h(8): note:  см. объявление "Labirint"
+c:\users\pupil\source\repos\project60\project60\labirint.h(64): error C2562: Labirint::Labirint: функция типа "void", возвращающая значение
+  c:\users\pupil\source\repos\project60\project60\labirint.h(36): note:  см. объявление "Labirint::Labirint"
+c:\users\pupil\source\repos\project60\project60\labirint.h(76): error C2065: cout: необъявленный идентификатор
+c:\users\pupil\source\repos\project60\project60\labirint.h(76): warning C4309: static_cast: усечение константного значения
+c:\users\pupil\source\repos\project60\project60\labirint.h(77): error C2065: cout: необъявленный идентификатор
+c:\users\pupil\source\repos\project60\project60\labirint.h(77): warning C4309: static_cast: усечение константного значения
+c:\users\pupil\source\repos\project60\project60\labirint.h(81): error C2065: cout: необъявленный идентификатор
+c:\users\pupil\source\repos\project60\project60\labirint.h(81): warning C4309: static_cast: усечение константного значения
+c:\users\pupil\source\repos\project60\project60\labirint.h(82): error C2065: cout: необъявленный идентификатор
+c:\users\pupil\source\repos\project60\project60\labirint.h(82): warning C4309: static_cast: усечение константного значения
+c:\users\pupil\source\repos\project60\project60\labirint.h(86): error C2065: cout: необъявленный идентификатор
+c:\users\pupil\source\repos\project60\project60\labirint.h(87): error C2065: cout: необъявленный идентификатор
+c:\users\pupil\source\repos\project60\project60\labirint.h(92): error C2065: cout: необъявленный идентификатор
+c:\users\pupil\source\repos\project60\project60\labirint.h(96): error C2065: cout: необъявленный идентификатор
+c:\users\pupil\source\repos\project60\project60\labirint.h(99): error C2065: cout: необъявленный идентификатор
+c:\users\pupil\source\repos\project60\project60\labirint.h(99): error C2065: endl: необъявленный идентификатор
+c:\users\pupil\source\repos\project60\project60\labirint.h(105): error C2065: direction: необъявленный идентификатор
+c:\users\pupil\source\repos\project60\project60\labirint.h(110): error C2065: direction: необъявленный идентификатор
+c:\users\pupil\source\repos\project60\project60\labirint.h(115): error C2065: direction: необъявленный идентификатор
+c:\users\pupil\source\repos\project60\project60\labirint.h(120): error C2065: direction: необъявленный идентификатор
+c:\users\pupil\source\repos\project60\project60\labirint.h(131): error C2065: cout: необъявленный идентификатор
+c:\users\pupil\source\repos\project60\project60\labirint.h(131): error C2065: endl: необъявленный идентификатор
+c:\users\pupil\source\repos\project60\project60\labirint.h(132): warning C4553: "==": результат выражения не используется; вы хотели использовать "="?
+c:\users\pupil\source\repos\project60\project60\source.cpp(13): warning C4551: в вызове функции отсутствует список аргументов
+c:\users\pupil\source\repos\project60\project60\source.cpp(43): error C2660: Labirint::Move: функция не принимает 1 аргументов
+  c:\users\pupil\source\repos\project60\project60\labirint.h(102): note:  см. объявление "Labirint::Move"
