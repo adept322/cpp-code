@@ -1,0 +1,227 @@
+#include <iostream>
+#include <Windows.h>
+
+using namespace std;
+
+struct Coordinate
+{
+	int i;
+	int j;
+};
+
+class Game
+{
+private:
+	char map[3][3] = {{' ',' ',' '},{' ',' ',' '},{' ',' ',' '}};
+	bool end;
+public:
+	Game()
+	{
+		end = false;
+	}
+	void MoveX(Coordinate point)
+	{
+		if (map[point.i][point.j] != 'o' && map[point.i][point.j] !='x')
+		{
+			map[point.i][point.j] = 'x';
+		}
+		else
+		{
+			cout << "<Некорректный ход>" << endl;
+		}
+	}
+	void MoveO(Coordinate point)
+	{
+		if (map[point.i][point.j] != 'x' && map[point.i][point.j] != 'o')
+		{
+			map[point.i][point.j] = 'o';
+		}
+	}
+	void ShowMap()
+	{
+		cout << "----------------" << endl;
+		for (int i = 0; i < 3; i++)
+		{
+			for (int j = 0; j < 3; j++)
+			{
+				cout << map[i][j] << " ";
+			}
+			cout << "    ";
+			
+			
+			
+			if (i == 0)
+			{
+				for (int o = 0; o < 3; o++)
+				{
+					cout << o + 1 << " ";
+				}
+			}
+			if (i == 1)
+			{
+				for (int o = 0; o < 3; o++)
+				{
+					cout << o + 4 << " ";
+				}
+			}
+			if (i == 2)
+			{
+				for (int o = 0; o < 3; o++)
+				{
+					cout << o + 7 << " ";
+				}
+			}
+			cout << endl;
+		}
+		cout << "----------------" << endl;
+	}
+	char CheckWin()
+	{
+		bool WinX = false;
+		bool WinO = false;
+		char Symbol;
+		if (map[0][0] == 'x'&& map[1][1] == 'x'&& map[2][2] == 'x')
+			WinX = true;
+		if (map[2][0] == 'x'&& map[1][1] == 'x'&& map[0][2] == 'x')
+			WinX = true;
+		if (map[0][0] == 'x'&& map[0][1] == 'x'&& map[0][2] == 'x')
+			WinX = true;
+		if (map[1][0] == 'x'&& map[1][1] == 'x'&& map[1][2] == 'x')
+			WinX = true;
+		if (map[2][0] == 'x'&& map[2][1] == 'x'&& map[2][2] == 'x')
+			WinX = true;
+		if (map[0][0] == 'x'&& map[1][0] == 'x'&& map[2][0] == 'x')
+			WinX = true;
+		if (map[0][1] == 'x'&& map[1][1] == 'x'&& map[2][1] == 'x')
+			WinX = true;
+		if (map[0][2] == 'x'&& map[1][2] == 'x'&& map[2][2] == 'x')
+			WinX = true;
+
+		if (map[0][0] == 'o'&& map[1][1] == 'o'&& map[2][2] == 'o')
+			WinO = true;
+		if (map[2][0] == 'o'&& map[1][1] == 'o'&& map[0][2] == 'o')
+			WinO = true;
+		if (map[0][0] == 'o'&& map[0][1] == 'o'&& map[0][2] == 'o')
+			WinO = true;
+		if (map[1][0] == 'o'&& map[1][1] == 'o'&& map[1][2] == 'o')
+			WinO = true;
+		if (map[2][0] == 'o'&& map[2][1] == 'o'&& map[2][2] == 'o')
+			WinO = true;
+		if (map[0][0] == 'o'&& map[1][0] == 'o'&& map[2][0] == 'o')
+			WinO = true;
+		if (map[0][1] == 'o'&& map[1][1] == 'o'&& map[2][1] == 'o')
+			WinO = true;
+		if (map[0][2] == 'o'&& map[1][2] == 'o'&& map[2][2] == 'o')
+			WinO = true;
+
+		if (WinX == true && WinO == false)
+		{
+			Symbol = 'x';
+			return Symbol;
+		}
+		else
+		{
+			if (WinX == false && WinO == true)
+			{
+				Symbol = 'o';
+				return Symbol;
+			}
+			else
+			{
+				Symbol = '@';
+				return Symbol;
+			}
+		}
+	}
+};
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	Game G; //Noughts and Crosses
+	Coordinate point;
+	int key,count = 1;
+	while (G.CheckWin() == '@')
+	{
+
+		system("cls");
+		cout << "<Крестики Нолики>" << endl;
+		cout << "<Первый игрок ->O>" << endl;
+		cout << "<Второй игрок ->X>" << endl;
+		cout << "<Управление осуществляется с помощью ввода цифр>" << endl;
+		cout << "<Чтобы узнать куда нужно пойти, нужно сопоставить позиции подсказки и поля>" << endl;
+		G.ShowMap();
+		if (count % 2 == 0)
+		{
+			cout << "<Ходит второй игрок>" << endl;
+		}
+		else
+		{
+			cout << "<Ходит первый игрок>" << endl;
+		}
+		cin >> key;
+		if (key == 1)
+		{
+			point.i = 0;
+			point.j = 0;
+		}
+		if (key == 2)
+		{
+			point.i = 0;
+			point.j = 1;
+		}
+		if (key == 3)
+		{
+			point.i = 0;
+			point.j = 2;
+		}
+		if (key == 4)
+		{
+			point.i = 1;
+			point.j = 0;
+		}
+		if (key == 5)
+		{
+			point.i = 1;
+			point.j = 1;
+		}
+		if (key == 6)
+		{
+			point.i = 1;
+			point.j = 2;
+		}
+		if (key == 7)
+		{
+			point.i = 2;
+			point.j = 0;
+		}
+		if (key == 8)
+		{
+			point.i = 2;
+			point.j = 1;
+		}
+		if (key == 9)
+		{
+			point.i = 2;
+			point.j = 2;
+		}
+		if (count % 2 == 0)
+		{
+			G.MoveX(point);
+		}
+		else
+		{
+			G.MoveO(point);
+		}
+		count++;
+		system("pause");
+	}
+	system("cls");
+	cout << "Победитель -> ";
+	if (G.CheckWin() == 'o')
+		cout << "Первый игрок >" << endl;
+	if (G.CheckWin() == 'x')
+		cout << "Второй игрок >" << endl;
+	system("pause");
+	return 0;
+}
