@@ -1,7 +1,9 @@
 #pragma once
 #include <iostream>
 #include <string>
-
+#include <fstream>
+#include <iomanip>
+#include <vector>
 using namespace std;
 
 class BankAccount
@@ -31,11 +33,11 @@ public:
 		if (money_to_add > 0)
 		{
 			valid_cash = valid_cash + money_to_add;
-			cout << "Успешно" << endl;
+			cout << "<Успешно>" << endl;
 		}
 		else
 		{
-			cout << "Ошибка" << endl;
+			cout << "<Ошибка><Сумма на добавление отрицательна>" << endl;
 		}
 	}
 	void WithdrawCash(double money_to_withdraw)
@@ -44,17 +46,17 @@ public:
 		{
 			if (money_to_withdraw > valid_cash && type != "credit")
 			{
-				cout << "Ошибка" << endl;
+				cout << "<Ошибка><Недостаточно средств>" << endl;
 			}
 			else
 			{
 				valid_cash = valid_cash - money_to_withdraw;
-				cout << "Успешно" << endl;
+				cout << "<Успешно>" << endl;
 			}
 		}
 		else
 		{
-			cout << "Ошибка" << endl;
+			cout << "<Ошибка><Сумма на снятие отрицательна>" << endl;
 		}
 	}
 	string GetName()

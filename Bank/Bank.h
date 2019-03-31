@@ -4,7 +4,6 @@
 #include <fstream>
 #include <iomanip>
 #include <vector>
-#include <string>
 #include "BankAccount.h"
 
 using namespace std;
@@ -37,20 +36,20 @@ public:
 				BankAccount buf = BankAccount(_name, _valid_cash, _id_account, _type);
 				base.push_back(buf);
 			}
-			base.pop_back();
 			fin.close();
+			base.pop_back();
 		}
 		else
 		{
-			cout << "������" << endl;
+			cout << "<Ошибка><Чтение базы невозможно>" << endl;
 		}
 	}
 	void Show()
 	{
-		cout << left << setw(40) << "Name" << setw(7) << "Cash" << setw(11) << "ID " << setw(10) << "Type" << endl;
+		cout << left << setw(40) << "Name(FIO)" << setw(10) << "Money($)" << setw(11) << "ID(10)" << setw(10) << "Type(DDC)" << endl;
 		for (int i = 0; i < base.size(); i++)
 		{
-			cout << left << setw(40) << base[i].GetName() << setw(7) << base[i].GetCash() << setw(11) << base[i].GetId() << setw(10) << base[i].GetType() << endl;
+			cout << left << setw(40) << base[i].GetName() << setw(10) << base[i].GetCash() << setw(11) << base[i].GetId() << setw(10) << base[i].GetType() << endl;
 		}
 	}
 	void AddAccount(BankAccount to_add)
@@ -64,13 +63,20 @@ public:
 				break;
 			}
 		}
-		if (check == true && to_add.GetId().length() == 10)
+		if(to_add.GetCash() < 0 && to_add.GetType() != "credit")
 		{
-			base.push_back(to_add);
+			cout<<"<Ошибка><Некорректный баланс>"<<endl;
 		}
 		else
 		{
-			cout << "������" << endl;
+			if (check == true && to_add.GetId().length() == 10)
+			{
+				base.push_back(to_add);
+			}
+			else
+			{
+				cout << "<Ошибка><ID занят><Некорректный ID>" << endl;
+			}		
 		}
 	}
 	void RemoveAccount(string ID)
@@ -92,5 +98,39 @@ public:
 			fout << base[i].GetName() << " " << base[i].GetCash() << " " << base[i].GetId() << " " << base[i].GetType()<< endl;
 		}
 		fout.close();
+	}
+	int SizeBase()
+	{
+		return base.size();
+	}
+	void AddCashToAccount(double _cash,string _id)
+	{
+		bool add = false;
+		for (int i = 0; i < base.size(); i++)
+		{
+			if (base[i].GetId() == _id)
+			{
+				base[i].AddCash(_cash);
+				add = true;
+				break;
+			}
+		}
+	}
+	void WithdrawCashToAccount(double _cash, string _id)
+	{
+		bool del = false;
+		for (int i = 0; i < base.size(); i++)
+		{
+			if (base[i].GetId() == _id)
+			{
+				base[i].WithdrawCash(_cash);
+				del = true;
+				break;
+			}
+			if (del == true && i - 1 == base.size())
+			{
+				cout << "<Ошибка><Некорректный ID>" << endl;
+			}
+		}
 	}
 };
