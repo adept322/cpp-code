@@ -1,6 +1,7 @@
 #pragma once
 
 #include<iostream>
+#include<sstream>
 #include<Windows.h>
 #include<string>
 #include<vector>
@@ -89,24 +90,76 @@ public:
 				LastNum.push_back(buf1[i]);
 			}
 			Stack.push_back(LastNum);
-				/*
-				for (int i = 0; i < Stack.size(); i++)
-				{
-					cout << Stack[i]<<endl;
-				}
-				*/
+			for (int i = 0; i < Stack.size(); i++)
+			{
+				cout << Stack[i];
+			}
+			//Ѕлок подсчЄта
 			int BufResult = 0;
 			for (int i = 0; i < Stack.size(); i++)
 			{
 				if (Stack[i] == "/")
 				{
 					BufResult = atoi(Stack[i - 1].c_str()) / atoi(Stack[i + 1].c_str());
+					string Result = "";
+					stringstream ss;
+					ss << BufResult;
+					ss >> Result;
 					Stack.erase(Stack.begin() + (i - 1));
 					Stack.erase(Stack.begin() + i);
 					Stack.erase(Stack.begin() + (i + 1));
-					Stack.insert()
+					Stack.insert(Stack.begin() + (i - 1), Result);
 				}
 			}
+			BufResult = 0;
+			for (int i = 0; i < Stack.size(); i++)
+			{
+				if (Stack[i] == "*")
+				{
+					BufResult = atoi(Stack[i - 1].c_str()) * atoi(Stack[i + 1].c_str());
+					string Result = "";
+					stringstream ss;
+					ss << BufResult;
+					ss >> Result;
+					Stack.erase(Stack.begin() + (i - 1));
+					Stack.erase(Stack.begin() + i);
+					Stack.erase(Stack.begin() + (i + 1));
+					Stack.insert(Stack.begin() + (i - 1), Result);
+				}
+			}
+			BufResult = 0;
+			for (int i = 0; i < Stack.size(); i++)
+			{
+				if (Stack[i] == "+")
+				{
+					BufResult = atoi(Stack[i - 1].c_str()) + atoi(Stack[i + 1].c_str());
+					string Result = "";
+					stringstream ss;
+					ss << BufResult;
+					ss >> Result;
+					Stack.erase(Stack.begin() + (i - 1));
+					Stack.erase(Stack.begin() + i);
+					Stack.erase(Stack.begin() + (i + 1));
+					Stack.insert(Stack.begin() + (i - 1), Result);
+				}
+			}
+			BufResult = 0;
+			for (int i = 0; i < Stack.size(); i++)
+			{
+				if (Stack[i] == "-")
+				{
+					BufResult = atoi(Stack[i - 1].c_str()) - atoi(Stack[i + 1].c_str());
+					string Result = "";
+					stringstream ss;
+					ss << BufResult;
+					ss >> Result;
+					Stack.erase(Stack.begin() + (i - 1));
+					Stack.erase(Stack.begin() + i);
+					Stack.erase(Stack.begin() + (i + 1));
+					Stack.insert(Stack.begin() + (i - 1),Result);
+				}
+			}
+			cout << Stack[0];
 		}
 		
 		else
