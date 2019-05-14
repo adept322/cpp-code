@@ -44,7 +44,7 @@ public:
 class SmartCalc
 {
 private:
-	 int result;
+	int result;
 public:
 	SmartCalc()
 	{
@@ -79,7 +79,7 @@ public:
 			}
 			string buf = LastNum;
 			LastNum = "";
-			for (int i = buf.size();i > 0; i--)
+			for (int i = buf.size(); i > 0; i--)
 			{
 				LastNum.push_back(buf[i]);
 			}
@@ -90,81 +90,99 @@ public:
 				LastNum.push_back(buf1[i]);
 			}
 			Stack.push_back(LastNum);
-			for (int i = 0; i < Stack.size(); i++)
-			{
-				cout << Stack[i];
-			}
-			//Ѕлок подсчЄта
 			int BufResult = 0;
-			for (int i = 0; i < Stack.size(); i++)
+			while(true)
 			{
-				if (Stack[i] == "/")
+				for (int i = 0; i < Stack.size(); i++)
 				{
-					BufResult = atoi(Stack[i - 1].c_str()) / atoi(Stack[i + 1].c_str());
-					string Result = "";
-					stringstream ss;
-					ss << BufResult;
-					ss >> Result;
-					Stack.erase(Stack.begin() + (i - 1));
-					Stack.erase(Stack.begin() + i);
-					Stack.erase(Stack.begin() + (i + 1));
-					Stack.insert(Stack.begin() + (i - 1), Result);
+					if (Stack[i] == "/")
+					{
+						BufResult = atoi(Stack[i - 1].c_str()) / atoi(Stack[i + 1].c_str());
+						string Result = "";
+						stringstream ss;
+						ss << BufResult;
+						ss >> Result;
+						Stack[i] = Result;
+						Stack[i - 1].erase();
+						Stack[i + 1].erase();
+						BufResult = 0;
+					}
+					if (Stack[i] == "*")
+					{
+						BufResult = atoi(Stack[i - 1].c_str()) * atoi(Stack[i + 1].c_str());
+						string Result = "";
+						stringstream ss;
+						ss << BufResult;
+						ss >> Result;
+						Stack[i] = Result;
+						Stack[i - 1].erase();
+						Stack[i + 1].erase();
+						BufResult = 0;
+					}
+					for (int i = 0; i < Stack.size(); i++)
+					{
+						if (Stack[i] == "")
+						{
+							Stack.erase(Stack.begin() + i);
+						}
+					}
 				}
-			}
-			BufResult = 0;
-			for (int i = 0; i < Stack.size(); i++)
-			{
-				if (Stack[i] == "*")
+				for (int i = 0; i < Stack.size(); i++)
 				{
-					BufResult = atoi(Stack[i - 1].c_str()) * atoi(Stack[i + 1].c_str());
-					string Result = "";
-					stringstream ss;
-					ss << BufResult;
-					ss >> Result;
-					Stack.erase(Stack.begin() + (i - 1));
-					Stack.erase(Stack.begin() + i);
-					Stack.erase(Stack.begin() + (i + 1));
-					Stack.insert(Stack.begin() + (i - 1), Result);
+					if (Stack[i] == "+")
+					{
+						BufResult = atoi(Stack[i - 1].c_str()) + atoi(Stack[i + 1].c_str());
+						string Result = "";
+						stringstream ss;
+						ss << BufResult;
+						ss >> Result;
+						Stack[i] = Result;
+						Stack[i - 1].erase();
+						Stack[i + 1].erase();
+						BufResult = 0;
+					}
+					if (Stack[i] == "-")
+					{
+						BufResult = atoi(Stack[i - 1].c_str()) - atoi(Stack[i + 1].c_str());
+						string Result = "";
+						stringstream ss;
+						ss << BufResult;
+						ss >> Result;
+						Stack[i] = Result;
+						Stack[i - 1].erase();
+						Stack[i + 1].erase();
+						BufResult = 0;
+
+					}
+					for (int i = 0; i < Stack.size(); i++)
+					{
+						if (Stack[i] == "")
+						{
+							Stack.erase(Stack.begin() + i);
+						}
+					}
 				}
-			}
-			BufResult = 0;
-			for (int i = 0; i < Stack.size(); i++)
-			{
-				if (Stack[i] == "+")
-				{
-					BufResult = atoi(Stack[i - 1].c_str()) + atoi(Stack[i + 1].c_str());
-					string Result = "";
-					stringstream ss;
-					ss << BufResult;
-					ss >> Result;
-					Stack.erase(Stack.begin() + (i - 1));
-					Stack.erase(Stack.begin() + i);
-					Stack.erase(Stack.begin() + (i + 1));
-					Stack.insert(Stack.begin() + (i - 1), Result);
-				}
-			}
-			BufResult = 0;
-			for (int i = 0; i < Stack.size(); i++)
-			{
-				if (Stack[i] == "-")
-				{
-					BufResult = atoi(Stack[i - 1].c_str()) - atoi(Stack[i + 1].c_str());
-					string Result = "";
-					stringstream ss;
-					ss << BufResult;
-					ss >> Result;
-					Stack.erase(Stack.begin() + (i - 1));
-					Stack.erase(Stack.begin() + i);
-					Stack.erase(Stack.begin() + (i + 1));
-					Stack.insert(Stack.begin() + (i - 1),Result);
-				}
-			}
-			cout << Stack[0];
-		}
 		
+				//Check
+				for (int i = 0; i < Stack.size(); i++)
+				{
+					if (Stack[i] == "")
+					{
+						Stack.erase(Stack.begin() + i);
+					}
+				}
+				if (Stack.size() == 1)
+				{
+					break;
+				}
+			}
+			result = atoi(Stack[0].c_str());
+			cout << "Result: " << result << endl;
+		}
 		else
 		{
 			cout << "Error" << endl;
 		}
 	}
 };
+

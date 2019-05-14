@@ -14,7 +14,6 @@ int main()
 	string DATA = "";
 	getline(cin, DATA);
 	SmartCalc Example = SmartCalc(DATA);
-	
 	system("pause");
 	return 0;
 }
